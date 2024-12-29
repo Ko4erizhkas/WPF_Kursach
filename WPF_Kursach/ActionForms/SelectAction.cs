@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,16 +15,16 @@ namespace WPF_Kursach
     {
         public SelectAction()
         {
-            InitializeComponent();
+            InitializeComponent();   
         }
         private void AddDoctorButtom_Click(object sender, EventArgs e)
         {
-            AuthDoctorForm authDoctorForm = new AuthDoctorForm();
+            RegDoctorForm authDoctorForm = new RegDoctorForm();
             authDoctorForm.Show();
         }
         private void AddPatientButtom_Click(object sender, EventArgs e)
         {
-            AuthPatientForm authPatientForm = new AuthPatientForm();
+            RegPatientForm authPatientForm = new RegPatientForm();
             authPatientForm.Show();
         }
 

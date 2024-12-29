@@ -8,22 +8,12 @@ using System.Threading.Tasks;
 
 namespace WPF_Kursach.ControlDirectory
 {
-    public class Doctor
+    public class Doctor : Patient
     {
         private int _ExpYears;
-        public string? Id { get; set; }
-
-        [JsonPropertyName("FullName")]
-        public string? FullName { get; set; }
-
-        [JsonPropertyName("Surname")]
-        public string? Surname { get; set; } // Фамилия
 
         [JsonPropertyName("Specialty")]
         public string? Specialty { get; set; }
-
-        [JsonPropertyName("PhoneNumber")]
-        public string? PhoneNumber { get; set; }
 
         [JsonPropertyName("ExperienceYears")]
         public int ExperienceYears
@@ -45,12 +35,17 @@ namespace WPF_Kursach.ControlDirectory
                 }
             }
         }
+
         //public bool IsProfessor { get; set; }
         //public bool IsDocent { get; set; }
         //public decimal Salary { get; set; }
-        public Doctor(string _Surname, string _FullName, 
+        public Doctor(string _FullName, string _Surname,
                       string _Speciality, int _ExperienceYears, 
-                      string _PhoneNumber) 
+                      string _PhoneNumber, string _DateBirthS, 
+                      string _Gender, string _Address, 
+                      string _MedicalInstitution, uint _Years) 
+            : base (_FullName, _Surname, _DateBirthS, _Gender, 
+                    _Address, _PhoneNumber, _MedicalInstitution, _Years)
         {
             this.Surname = _Surname;
             this.FullName = _FullName;
@@ -58,17 +53,26 @@ namespace WPF_Kursach.ControlDirectory
             this.PhoneNumber = _PhoneNumber;
             this.ExperienceYears = _ExperienceYears;
         }
-        public Doctor() { }
-        public string SerializeDoctor(string _Surname, string _FullName,
-                      string _Speciality, int _ExperienceYears,
-                      string _PhoneNumber)
+        public Doctor(string _FullName, string _Surname) : base (_FullName, _Surname)
         {
-            string jsonDataDoctor = JsonSerializer.Serialize<Doctor>(new Doctor (_Surname, _FullName, _Speciality, _ExperienceYears, _PhoneNumber));
+            this.FullName = _FullName;
+            this.Surname = _Surname;
+        }
+        public Doctor() { }
+
+        public string SerializeDoctor(string _FullName, string _Surname,
+                      string _Speciality, int _ExperienceYears,
+                      string _PhoneNumber, string _DateBirthS,
+                      string _Gender, string _Address,
+                      string _MedicalInstitution, uint _Years)
+        {
+            string jsonDataDoctor = JsonSerializer.Serialize(new Doctor (_FullName, _Surname, _Speciality, _ExperienceYears,
+                                                             _PhoneNumber, _DateBirthS, _Gender, _Address, _MedicalInstitution, _Years));
             return jsonDataDoctor;
         }
         public string SerializeDoctor(Doctor doctor)
         {
-            string jsonDataDoctor = JsonSerializer.Serialize<Doctor>(doctor);
+            string jsonDataDoctor = JsonSerializer.Serialize(doctor, new JsonSerializerOptions { WriteIndented = true });
             return jsonDataDoctor;
         }
         public Doctor DeserializeDoctor(string? fileName)
@@ -82,19 +86,6 @@ namespace WPF_Kursach.ControlDirectory
                 Doctor DJsonDataDoctor = JsonSerializer.Deserialize<Doctor>(fileName);
                 return DJsonDataDoctor;
             }   
-        }
-        public void Main_Doctor()
-        {
-            Doctor d = new Doctor
-            {
-                FullName = "asd",
-                Surname = "shadg",
-                Specialty = " sidghla",
-                ExperienceYears = 123,
-                PhoneNumber = "125681364"
-            };
-            string dop = SerializeDoctor(d);
-            var es = DeserializeDoctor(dop);
         }
     }
     
