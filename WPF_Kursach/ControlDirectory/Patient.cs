@@ -88,21 +88,6 @@ namespace WPF_Kursach.ControlDirectory
             }
             throw new ArgumentException("Неверный формат даты. Используйте формат dd.MM.yyyy");
         }
-        public string SerializePatient(string _FullName, string _Surname, string _DateBirthS,
-                                       string _Gender, string _Adress, string _PhoneNumber,
-                                       string _MedicalInstitution, uint _Years)
-        {
-            string jsonPatientData = JsonSerializer.Serialize(
-                                      new Patient(_FullName, _Surname, _DateBirthS,
-                                      _Gender, _Adress, _PhoneNumber,
-                                      _MedicalInstitution, _Years));
-            return jsonPatientData;
-        }
-        public string SerializePatient(Patient patient)
-        {
-            string jsonPatientData = JsonSerializer.Serialize(patient);
-            return jsonPatientData;
-        }
         public Patient DeserializePatient(string? fileName)
         {
             if (fileName == null)

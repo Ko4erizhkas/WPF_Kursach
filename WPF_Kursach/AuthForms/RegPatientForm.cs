@@ -35,7 +35,7 @@ namespace WPF_Kursach
             var NewPatient = new Patient(P_FullName, P_Surname,P_DateBirth, 
                                           P_Gender, P_Address,P_PhoneNumber,
                                           P_MedInst, P_Age);
-            //var PatientData = NewPatient.SerializePatient(NewPatient);
+            
             generatorFiles.GenerateFile(@"E:\Курсач\Patient", "Patient", NewPatient);
         }
     }

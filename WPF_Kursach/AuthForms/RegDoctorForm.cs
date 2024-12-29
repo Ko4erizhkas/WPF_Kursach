@@ -39,7 +39,6 @@ namespace WPF_Kursach
             int D_ExpYears = Convert.ToInt32(D_ExpTextBox_1.Text);
 
             var NewDoctor = new Doctor(D_FullName, D_Surname, D_SpecName, D_ExpYears, D_PhoneNumber, D_DateBirth, D_Gender, D_Address, D_MedInst, D_Years);
-           // var DoctorData = NewDoctor.SerializeDoctor(NewDoctor);
 
             generatorFiles.GenerateFile(@"E:\Курсач\Doctor", "Doctor", NewDoctor);
         }

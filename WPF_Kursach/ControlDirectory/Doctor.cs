@@ -60,22 +60,6 @@ namespace WPF_Kursach.ControlDirectory
             this.Surname = _Surname;
         }
         public Doctor() { }
-
-        public string SerializeDoctor(string _FullName, string _Surname,
-                      string _Speciality, int _ExperienceYears,
-                      string _PhoneNumber, string _DateBirthS,
-                      string _Gender, string _Address,
-                      string _MedicalInstitution, uint _Age)
-        {
-            string jsonDataDoctor = JsonSerializer.Serialize(new Doctor (_FullName, _Surname, _Speciality, _ExperienceYears,
-                                                             _PhoneNumber, _DateBirthS, _Gender, _Address, _MedicalInstitution, _Age), new JsonSerializerOptions { WriteIndented = true} );
-            return jsonDataDoctor;
-        }
-        public string SerializeDoctor(Doctor doctor)
-        {
-            string jsonDataDoctor = JsonSerializer.Serialize(doctor, new JsonSerializerOptions { WriteIndented = true });
-            return jsonDataDoctor;
-        }
         public Doctor DeserializeDoctor(string? fileName)
         {
             if (fileName == null)
