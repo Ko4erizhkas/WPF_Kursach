@@ -18,8 +18,10 @@ namespace WPF_Kursach.ControlDirectory
 
                 string filePath = Path.Combine(directoryPath, uniqueFileName);
 
-                string jsonContent = JsonSerializer.Serialize(fileContent);
-
+                var jsonContent = JsonSerializer.Serialize(fileContent, new JsonSerializerOptions
+                {
+                    WriteIndented = true // Читаемый формат JSON
+                });
                 File.WriteAllText(filePath, jsonContent);
             }
             catch (Exception ex) { }

@@ -7,12 +7,13 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WPF_Kursach.ControlDirectory
 {
     public class Patient
     {
-        private uint _Years;
+        private uint _Age;
         private Doctor _CurrentDoctor;
         private DateTime _dateBirth;
         [JsonPropertyName("Id")]
@@ -32,20 +33,20 @@ namespace WPF_Kursach.ControlDirectory
         [JsonPropertyName("MedicalInstitution")]
         public string? MedicalInstitution { get; set; } // Название больницы или поликлиники
         [JsonPropertyName("Years")]
-        public uint Years 
+        public uint Age 
         {
-            get { return _Years; }
+            get { return _Age; }
 
             set 
             {
                 if (value <= 0)
                 {
-                    _Years = 0;
+                    _Age = 0;
                     throw new ArgumentException("Zero or Negative Argument");
                 }
                 else
                 {
-                    value = _Years;
+                    value = _Age;
                 }
             }
         }
@@ -58,7 +59,7 @@ namespace WPF_Kursach.ControlDirectory
         } 
         public Patient(string _FullName, string _Surname, string _DateBirthS,
                        string _Gender, string _Adress, string _PhoneNumber,
-                       string _MedicalInstitution, uint _Years)
+                       string _MedicalInstitution, uint _Age)
         {
             this.FullName = _FullName;
             this.Surname = _Surname;
@@ -67,7 +68,7 @@ namespace WPF_Kursach.ControlDirectory
             this.Address = _Adress;
             this.PhoneNumber = _PhoneNumber;
             this.MedicalInstitution = _MedicalInstitution;
-            this.Years = _Years;
+            this.Age = _Age;
         }
         public Patient(string _FullName, string _Surname)
         {

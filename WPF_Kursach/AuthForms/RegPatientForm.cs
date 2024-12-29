@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WPF_Kursach.ControlDirectory;
 
 namespace WPF_Kursach
 {
@@ -17,32 +18,25 @@ namespace WPF_Kursach
             InitializeComponent();
         }
 
-        private void AuthPatient_Load(object sender, EventArgs e)
+        private void AuthPatient_Load(object sender, EventArgs e) { }
+
+        private void RegPatientButtom_1_Click(object sender, EventArgs e)
         {
+            GeneratorFiles generatorFiles = new GeneratorFiles();
 
-        }
-
-        private void DFullNameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RegDoctorLabel_1(object sender, EventArgs e)
-        {
-
-        }
-        private void PExpTextBox_1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void PSpecTextBox_1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PSurnameTextBox_1_TextChanged(object sender, EventArgs e)
-        {
-
+            string P_FullName = P_FullNameTextBox_1.Text;
+            string P_Surname = P_SurnameTextBox_1.Text;
+            string P_PhoneNumber = P_PhoneNumberTextBox_1.Text;
+            string P_MedInst = P_MedInstTextBox1.Text;
+            string P_Gender = P_GenderTextBox_1.Text;
+            string P_Address = P_AddressTextBox_1.Text;
+            uint P_Age = Convert.ToUInt32(P_AgeTextBox_1.Text);
+            string P_DateBirth = P_DateBirthTextBox_1.Text;
+            var NewPatient = new Patient(P_FullName, P_Surname,P_DateBirth, 
+                                          P_Gender, P_Address,P_PhoneNumber,
+                                          P_MedInst, P_Age);
+            //var PatientData = NewPatient.SerializePatient(NewPatient);
+            generatorFiles.GenerateFile(@"E:\Курсач\Patient", "Patient", NewPatient);
         }
     }
 }

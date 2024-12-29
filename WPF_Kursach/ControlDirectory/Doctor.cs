@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WPF_Kursach.ControlDirectory
 {
@@ -43,9 +44,9 @@ namespace WPF_Kursach.ControlDirectory
                       string _Speciality, int _ExperienceYears, 
                       string _PhoneNumber, string _DateBirthS, 
                       string _Gender, string _Address, 
-                      string _MedicalInstitution, uint _Years) 
-            : base (_FullName, _Surname, _DateBirthS, _Gender, 
-                    _Address, _PhoneNumber, _MedicalInstitution, _Years)
+                      string _MedicalInstitution, uint _Age)
+        : base (_FullName, _Surname, _DateBirthS, _Gender, 
+                    _Address, _PhoneNumber, _MedicalInstitution, _Age)
         {
             this.Surname = _Surname;
             this.FullName = _FullName;
@@ -64,10 +65,10 @@ namespace WPF_Kursach.ControlDirectory
                       string _Speciality, int _ExperienceYears,
                       string _PhoneNumber, string _DateBirthS,
                       string _Gender, string _Address,
-                      string _MedicalInstitution, uint _Years)
+                      string _MedicalInstitution, uint _Age)
         {
             string jsonDataDoctor = JsonSerializer.Serialize(new Doctor (_FullName, _Surname, _Speciality, _ExperienceYears,
-                                                             _PhoneNumber, _DateBirthS, _Gender, _Address, _MedicalInstitution, _Years));
+                                                             _PhoneNumber, _DateBirthS, _Gender, _Address, _MedicalInstitution, _Age), new JsonSerializerOptions { WriteIndented = true} );
             return jsonDataDoctor;
         }
         public string SerializeDoctor(Doctor doctor)

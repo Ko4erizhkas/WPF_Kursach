@@ -20,9 +20,9 @@ namespace WPF_Kursach
         }
         private void AuthDoctorForm_Load(object sender, EventArgs e)
         {
-            
+
         }
-        private void AuthDoctorButtom_1_Click(object sender, EventArgs e) 
+        private void AuthDoctorButtom_1_Click(object sender, EventArgs e)
         {
             GeneratorFiles generatorFiles = new GeneratorFiles();
 
@@ -38,10 +38,10 @@ namespace WPF_Kursach
             uint D_Years = Convert.ToUInt32(D_YearsTextBox_1.Text);
             int D_ExpYears = Convert.ToInt32(D_ExpTextBox_1.Text);
 
-            var NewDoctor = new Doctor(D_FullName, D_Surname,D_SpecName,D_ExpYears,D_PhoneNumber, D_DateBirth, D_Gender, D_Address, D_MedInst, D_Years);
-            var DoctorData = NewDoctor.SerializeDoctor(NewDoctor);
+            var NewDoctor = new Doctor(D_FullName, D_Surname, D_SpecName, D_ExpYears, D_PhoneNumber, D_DateBirth, D_Gender, D_Address, D_MedInst, D_Years);
+           // var DoctorData = NewDoctor.SerializeDoctor(NewDoctor);
 
-            generatorFiles.GenerateFile(@"E:\Курсач\Doctor", "Doctor", DoctorData);
+            generatorFiles.GenerateFile(@"E:\Курсач\Doctor", "Doctor", NewDoctor);
         }
     }
 }
