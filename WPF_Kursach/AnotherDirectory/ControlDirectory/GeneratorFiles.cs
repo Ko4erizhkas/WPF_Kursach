@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-namespace WPF_Kursach.ControlDirectory
+namespace WPF_Kursach.AnotherDirectory.ControlDirectory
 {
     public class GeneratorFiles
     {
@@ -17,14 +17,21 @@ namespace WPF_Kursach.ControlDirectory
                 string uniqueFileName = GenerateUniqueName(directoryPath, fileName, "json");
 
                 string filePath = Path.Combine(directoryPath, uniqueFileName);
-
-                var jsonContent = JsonSerializer.Serialize(fileContent, new JsonSerializerOptions
+                var JsonFormater = new JsonSerializerOptions
                 {
-                    WriteIndented = true // Читаемый формат JSON
-                });
+                    // Читаемый формат JSON
+                    WriteIndented = true, 
+
+                    // Сохраняет кодировку текста в "читабильном" виде
+                    Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping 
+                };
+                var jsonContent = JsonSerializer.Serialize(fileContent, JsonFormater);
                 File.WriteAllText(filePath, jsonContent);
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            {
+                throw new Exception($"Не удалось создать файл: {fileName} \n Ошибка: {ex}");
+            }
         }
         public string GenerateUniqueName(string directoryPath, string baseName, string extension)
         {

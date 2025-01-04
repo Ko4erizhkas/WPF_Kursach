@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace WPF_Kursach
 {
-    public partial class SelectAction : Form
+    public partial class SelectActionForm : Form
     {
-        public SelectAction()
+        public SelectActionForm()
         {
             InitializeComponent();   
         }
@@ -30,8 +30,11 @@ namespace WPF_Kursach
 
         private void SelectAction_Load(object sender, EventArgs e)
         {
-
+            
         }
-
+        private void CloseButtom_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -1,3 +1,6 @@
+using WPF_Kursach.ActionForms;
+using WPF_Kursach.Polyclinic;
+
 namespace WPF_Kursach
 {
     internal static class Program
@@ -11,7 +14,8 @@ namespace WPF_Kursach
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new SelectAction());
+            Application.Run(new RegPatientForm());
+            //Application.Run(new UploadInfoFromJsonForm());
         }
     }
 }

@@ -29,67 +29,60 @@
         private void InitializeComponent()
         {
             Label P_PhoneNumber_1;
-            Label P_AddressLabel_1;
             Label P_SurnameLabel_1;
             Label P_GenderLabel_1;
             Label RegPatientLabel_1;
             Label P_FullNameLabel;
-            Label P_MedInstLabel_1;
-            Label PCurrentDoctorLabel_1;
+            Label P_EmailLabel_1;
+            Label P_CurrentDoctorLabel_1;
             Label P_DoctorFullNameLabel_1;
             Label P_DoctorSurnameLabel_1;
             Label P_AgeLabel_1;
-            Label P_DateBirthLabel_1;
+            Label P_MiddleNameLabel_1;
+            Label label1;
+            Label P_DoctorMiddleNameLabel_1;
             RegPatientButtom_1 = new Button();
             P_PhoneNumberTextBox_1 = new TextBox();
-            P_AddressTextBox_1 = new TextBox();
             P_SurnameTextBox_1 = new TextBox();
-            P_GenderTextBox_1 = new TextBox();
             P_FullNameTextBox_1 = new TextBox();
-            P_MedInstTextBox1 = new TextBox();
+            P_EmailTextBox1 = new TextBox();
             P_DoctorFullNameTextBox_1 = new TextBox();
             P_DoctorSurnameTextBox_1 = new TextBox();
             P_AgeTextBox_1 = new TextBox();
-            P_DateBirthTextBox_1 = new TextBox();
+            P_MiddleNameTextBox_1 = new TextBox();
+            P_DateTimePicker_1 = new DateTimePicker();
+            P_GenderComboBox_1 = new ComboBox();
+            P_DoctorMiddleNameTextBox_1 = new TextBox();
             P_PhoneNumber_1 = new Label();
-            P_AddressLabel_1 = new Label();
             P_SurnameLabel_1 = new Label();
             P_GenderLabel_1 = new Label();
             RegPatientLabel_1 = new Label();
             P_FullNameLabel = new Label();
-            P_MedInstLabel_1 = new Label();
-            PCurrentDoctorLabel_1 = new Label();
+            P_EmailLabel_1 = new Label();
+            P_CurrentDoctorLabel_1 = new Label();
             P_DoctorFullNameLabel_1 = new Label();
             P_DoctorSurnameLabel_1 = new Label();
             P_AgeLabel_1 = new Label();
-            P_DateBirthLabel_1 = new Label();
+            P_MiddleNameLabel_1 = new Label();
+            label1 = new Label();
+            P_DoctorMiddleNameLabel_1 = new Label();
             SuspendLayout();
             // 
             // P_PhoneNumber_1
             // 
             P_PhoneNumber_1.AutoSize = true;
             P_PhoneNumber_1.Font = new Font("Segoe UI", 9F);
-            P_PhoneNumber_1.Location = new Point(11, 167);
+            P_PhoneNumber_1.Location = new Point(11, 182);
             P_PhoneNumber_1.Name = "P_PhoneNumber_1";
             P_PhoneNumber_1.Size = new Size(101, 15);
             P_PhoneNumber_1.TabIndex = 22;
             P_PhoneNumber_1.Text = "Номер телефона";
             // 
-            // P_AddressLabel_1
-            // 
-            P_AddressLabel_1.AutoSize = true;
-            P_AddressLabel_1.Font = new Font("Segoe UI", 9F);
-            P_AddressLabel_1.Location = new Point(165, 107);
-            P_AddressLabel_1.Name = "P_AddressLabel_1";
-            P_AddressLabel_1.Size = new Size(112, 15);
-            P_AddressLabel_1.TabIndex = 20;
-            P_AddressLabel_1.Text = "Адрес проживания";
-            // 
             // P_SurnameLabel_1
             // 
             P_SurnameLabel_1.AutoSize = true;
             P_SurnameLabel_1.Font = new Font("Segoe UI", 9F);
-            P_SurnameLabel_1.Location = new Point(12, 107);
+            P_SurnameLabel_1.Location = new Point(158, 53);
             P_SurnameLabel_1.Name = "P_SurnameLabel_1";
             P_SurnameLabel_1.Size = new Size(58, 15);
             P_SurnameLabel_1.TabIndex = 18;
@@ -99,7 +92,7 @@
             // 
             P_GenderLabel_1.AutoSize = true;
             P_GenderLabel_1.Font = new Font("Segoe UI", 9F);
-            P_GenderLabel_1.Location = new Point(166, 53);
+            P_GenderLabel_1.Location = new Point(158, 182);
             P_GenderLabel_1.Name = "P_GenderLabel_1";
             P_GenderLabel_1.Size = new Size(30, 15);
             P_GenderLabel_1.TabIndex = 16;
@@ -109,7 +102,7 @@
             // 
             RegPatientLabel_1.AutoSize = true;
             RegPatientLabel_1.Font = new Font("Segoe UI", 9F);
-            RegPatientLabel_1.Location = new Point(79, 27);
+            RegPatientLabel_1.Location = new Point(66, 9);
             RegPatientLabel_1.Name = "RegPatientLabel_1";
             RegPatientLabel_1.Size = new Size(130, 15);
             RegPatientLabel_1.TabIndex = 14;
@@ -125,31 +118,31 @@
             P_FullNameLabel.TabIndex = 13;
             P_FullNameLabel.Text = "Имя";
             // 
-            // P_MedInstLabel_1
+            // P_EmailLabel_1
             // 
-            P_MedInstLabel_1.AutoSize = true;
-            P_MedInstLabel_1.Font = new Font("Segoe UI", 9F);
-            P_MedInstLabel_1.Location = new Point(10, 226);
-            P_MedInstLabel_1.Name = "P_MedInstLabel_1";
-            P_MedInstLabel_1.Size = new Size(133, 15);
-            P_MedInstLabel_1.TabIndex = 25;
-            P_MedInstLabel_1.Text = "Название организации";
+            P_EmailLabel_1.AutoSize = true;
+            P_EmailLabel_1.Font = new Font("Segoe UI", 9F);
+            P_EmailLabel_1.Location = new Point(156, 128);
+            P_EmailLabel_1.Name = "P_EmailLabel_1";
+            P_EmailLabel_1.Size = new Size(41, 15);
+            P_EmailLabel_1.TabIndex = 25;
+            P_EmailLabel_1.Text = "E-mail";
             // 
-            // PCurrentDoctorLabel_1
+            // P_CurrentDoctorLabel_1
             // 
-            PCurrentDoctorLabel_1.AutoSize = true;
-            PCurrentDoctorLabel_1.Font = new Font("Segoe UI", 9F);
-            PCurrentDoctorLabel_1.Location = new Point(333, 27);
-            PCurrentDoctorLabel_1.Name = "PCurrentDoctorLabel_1";
-            PCurrentDoctorLabel_1.Size = new Size(88, 15);
-            PCurrentDoctorLabel_1.TabIndex = 26;
-            PCurrentDoctorLabel_1.Text = "Лечащий врач";
+            P_CurrentDoctorLabel_1.AutoSize = true;
+            P_CurrentDoctorLabel_1.Font = new Font("Segoe UI", 9F);
+            P_CurrentDoctorLabel_1.Location = new Point(477, 9);
+            P_CurrentDoctorLabel_1.Name = "P_CurrentDoctorLabel_1";
+            P_CurrentDoctorLabel_1.Size = new Size(88, 15);
+            P_CurrentDoctorLabel_1.TabIndex = 26;
+            P_CurrentDoctorLabel_1.Text = "Лечащий врач";
             // 
             // P_DoctorFullNameLabel_1
             // 
             P_DoctorFullNameLabel_1.AutoSize = true;
             P_DoctorFullNameLabel_1.Font = new Font("Segoe UI", 9F);
-            P_DoctorFullNameLabel_1.Location = new Point(328, 53);
+            P_DoctorFullNameLabel_1.Location = new Point(477, 53);
             P_DoctorFullNameLabel_1.Name = "P_DoctorFullNameLabel_1";
             P_DoctorFullNameLabel_1.Size = new Size(66, 15);
             P_DoctorFullNameLabel_1.TabIndex = 28;
@@ -159,7 +152,7 @@
             // 
             P_DoctorSurnameLabel_1.AutoSize = true;
             P_DoctorSurnameLabel_1.Font = new Font("Segoe UI", 9F);
-            P_DoctorSurnameLabel_1.Location = new Point(328, 107);
+            P_DoctorSurnameLabel_1.Location = new Point(477, 118);
             P_DoctorSurnameLabel_1.Name = "P_DoctorSurnameLabel_1";
             P_DoctorSurnameLabel_1.Size = new Size(93, 15);
             P_DoctorSurnameLabel_1.TabIndex = 30;
@@ -169,25 +162,45 @@
             // 
             P_AgeLabel_1.AutoSize = true;
             P_AgeLabel_1.Font = new Font("Segoe UI", 9F);
-            P_AgeLabel_1.Location = new Point(166, 167);
+            P_AgeLabel_1.Location = new Point(10, 228);
             P_AgeLabel_1.Name = "P_AgeLabel_1";
             P_AgeLabel_1.Size = new Size(50, 15);
             P_AgeLabel_1.TabIndex = 33;
             P_AgeLabel_1.Text = "Возраст";
             // 
-            // P_DateBirthLabel_1
+            // P_MiddleNameLabel_1
             // 
-            P_DateBirthLabel_1.AutoSize = true;
-            P_DateBirthLabel_1.Font = new Font("Segoe UI", 9F);
-            P_DateBirthLabel_1.Location = new Point(166, 226);
-            P_DateBirthLabel_1.Name = "P_DateBirthLabel_1";
-            P_DateBirthLabel_1.Size = new Size(151, 15);
-            P_DateBirthLabel_1.TabIndex = 35;
-            P_DateBirthLabel_1.Text = "Дата рождения (дд.ММ.гг)";
+            P_MiddleNameLabel_1.AutoSize = true;
+            P_MiddleNameLabel_1.Font = new Font("Segoe UI", 9F);
+            P_MiddleNameLabel_1.Location = new Point(304, 53);
+            P_MiddleNameLabel_1.Name = "P_MiddleNameLabel_1";
+            P_MiddleNameLabel_1.Size = new Size(58, 15);
+            P_MiddleNameLabel_1.TabIndex = 37;
+            P_MiddleNameLabel_1.Text = "Отчество";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F);
+            label1.Location = new Point(11, 116);
+            label1.Name = "label1";
+            label1.Size = new Size(90, 15);
+            label1.TabIndex = 40;
+            label1.Text = "Дата рождения";
+            // 
+            // P_DoctorMiddleNameLabel_1
+            // 
+            P_DoctorMiddleNameLabel_1.AutoSize = true;
+            P_DoctorMiddleNameLabel_1.Font = new Font("Segoe UI", 9F);
+            P_DoctorMiddleNameLabel_1.Location = new Point(477, 182);
+            P_DoctorMiddleNameLabel_1.Name = "P_DoctorMiddleNameLabel_1";
+            P_DoctorMiddleNameLabel_1.Size = new Size(58, 15);
+            P_DoctorMiddleNameLabel_1.TabIndex = 43;
+            P_DoctorMiddleNameLabel_1.Text = "Отчество";
             // 
             // RegPatientButtom_1
             // 
-            RegPatientButtom_1.Location = new Point(166, 304);
+            RegPatientButtom_1.Location = new Point(156, 470);
             RegPatientButtom_1.Name = "RegPatientButtom_1";
             RegPatientButtom_1.Size = new Size(140, 50);
             RegPatientButtom_1.TabIndex = 23;
@@ -202,26 +215,12 @@
             P_PhoneNumberTextBox_1.Size = new Size(140, 23);
             P_PhoneNumberTextBox_1.TabIndex = 21;
             // 
-            // P_AddressTextBox_1
-            // 
-            P_AddressTextBox_1.Location = new Point(166, 138);
-            P_AddressTextBox_1.Name = "P_AddressTextBox_1";
-            P_AddressTextBox_1.Size = new Size(140, 23);
-            P_AddressTextBox_1.TabIndex = 31;
-            // 
             // P_SurnameTextBox_1
             // 
-            P_SurnameTextBox_1.Location = new Point(12, 141);
+            P_SurnameTextBox_1.Location = new Point(158, 81);
             P_SurnameTextBox_1.Name = "P_SurnameTextBox_1";
             P_SurnameTextBox_1.Size = new Size(140, 23);
             P_SurnameTextBox_1.TabIndex = 17;
-            // 
-            // P_GenderTextBox_1
-            // 
-            P_GenderTextBox_1.Location = new Point(166, 81);
-            P_GenderTextBox_1.Name = "P_GenderTextBox_1";
-            P_GenderTextBox_1.Size = new Size(140, 23);
-            P_GenderTextBox_1.TabIndex = 15;
             // 
             // P_FullNameTextBox_1
             // 
@@ -230,66 +229,92 @@
             P_FullNameTextBox_1.Size = new Size(140, 23);
             P_FullNameTextBox_1.TabIndex = 12;
             // 
-            // P_MedInstTextBox1
+            // P_EmailTextBox1
             // 
-            P_MedInstTextBox1.Location = new Point(10, 253);
-            P_MedInstTextBox1.Name = "P_MedInstTextBox1";
-            P_MedInstTextBox1.Size = new Size(140, 23);
-            P_MedInstTextBox1.TabIndex = 24;
+            P_EmailTextBox1.Location = new Point(156, 146);
+            P_EmailTextBox1.Name = "P_EmailTextBox1";
+            P_EmailTextBox1.Size = new Size(140, 23);
+            P_EmailTextBox1.TabIndex = 24;
             // 
             // P_DoctorFullNameTextBox_1
             // 
-            P_DoctorFullNameTextBox_1.Location = new Point(328, 81);
+            P_DoctorFullNameTextBox_1.Location = new Point(477, 81);
             P_DoctorFullNameTextBox_1.Name = "P_DoctorFullNameTextBox_1";
             P_DoctorFullNameTextBox_1.Size = new Size(140, 23);
             P_DoctorFullNameTextBox_1.TabIndex = 27;
             // 
             // P_DoctorSurnameTextBox_1
             // 
-            P_DoctorSurnameTextBox_1.Location = new Point(328, 138);
+            P_DoctorSurnameTextBox_1.Location = new Point(477, 143);
             P_DoctorSurnameTextBox_1.Name = "P_DoctorSurnameTextBox_1";
             P_DoctorSurnameTextBox_1.Size = new Size(140, 23);
             P_DoctorSurnameTextBox_1.TabIndex = 29;
             // 
             // P_AgeTextBox_1
             // 
-            P_AgeTextBox_1.Location = new Point(165, 200);
+            P_AgeTextBox_1.Location = new Point(10, 246);
             P_AgeTextBox_1.Name = "P_AgeTextBox_1";
             P_AgeTextBox_1.Size = new Size(140, 23);
             P_AgeTextBox_1.TabIndex = 32;
             // 
-            // P_DateBirthTextBox_1
+            // P_MiddleNameTextBox_1
             // 
-            P_DateBirthTextBox_1.Location = new Point(166, 253);
-            P_DateBirthTextBox_1.Name = "P_DateBirthTextBox_1";
-            P_DateBirthTextBox_1.Size = new Size(140, 23);
-            P_DateBirthTextBox_1.TabIndex = 34;
+            P_MiddleNameTextBox_1.Location = new Point(304, 81);
+            P_MiddleNameTextBox_1.Name = "P_MiddleNameTextBox_1";
+            P_MiddleNameTextBox_1.Size = new Size(140, 23);
+            P_MiddleNameTextBox_1.TabIndex = 36;
+            // 
+            // P_DateTimePicker_1
+            // 
+            P_DateTimePicker_1.CustomFormat = "dd.mm.yy";
+            P_DateTimePicker_1.Location = new Point(12, 143);
+            P_DateTimePicker_1.Name = "P_DateTimePicker_1";
+            P_DateTimePicker_1.Size = new Size(138, 23);
+            P_DateTimePicker_1.TabIndex = 38;
+            // 
+            // P_GenderComboBox_1
+            // 
+            P_GenderComboBox_1.FormattingEnabled = true;
+            P_GenderComboBox_1.Items.AddRange(new object[] { "Мужской", "Женский", "Неопределено" });
+            P_GenderComboBox_1.Location = new Point(158, 200);
+            P_GenderComboBox_1.Name = "P_GenderComboBox_1";
+            P_GenderComboBox_1.Size = new Size(121, 23);
+            P_GenderComboBox_1.TabIndex = 41;
+            // 
+            // P_DoctorMiddleNameTextBox_1
+            // 
+            P_DoctorMiddleNameTextBox_1.Location = new Point(477, 200);
+            P_DoctorMiddleNameTextBox_1.Name = "P_DoctorMiddleNameTextBox_1";
+            P_DoctorMiddleNameTextBox_1.Size = new Size(140, 23);
+            P_DoctorMiddleNameTextBox_1.TabIndex = 42;
             // 
             // RegPatientForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(495, 386);
-            Controls.Add(P_DateBirthLabel_1);
-            Controls.Add(P_DateBirthTextBox_1);
+            ClientSize = new Size(915, 554);
+            Controls.Add(P_DoctorMiddleNameLabel_1);
+            Controls.Add(P_DoctorMiddleNameTextBox_1);
+            Controls.Add(P_GenderComboBox_1);
+            Controls.Add(label1);
+            Controls.Add(P_DateTimePicker_1);
+            Controls.Add(P_MiddleNameLabel_1);
+            Controls.Add(P_MiddleNameTextBox_1);
             Controls.Add(P_AgeLabel_1);
             Controls.Add(P_AgeTextBox_1);
             Controls.Add(P_DoctorSurnameLabel_1);
             Controls.Add(P_DoctorSurnameTextBox_1);
             Controls.Add(P_DoctorFullNameLabel_1);
             Controls.Add(P_DoctorFullNameTextBox_1);
-            Controls.Add(PCurrentDoctorLabel_1);
-            Controls.Add(P_MedInstLabel_1);
-            Controls.Add(P_MedInstTextBox1);
+            Controls.Add(P_CurrentDoctorLabel_1);
+            Controls.Add(P_EmailLabel_1);
+            Controls.Add(P_EmailTextBox1);
             Controls.Add(RegPatientButtom_1);
             Controls.Add(P_PhoneNumber_1);
             Controls.Add(P_PhoneNumberTextBox_1);
-            Controls.Add(P_AddressLabel_1);
-            Controls.Add(P_AddressTextBox_1);
             Controls.Add(P_SurnameLabel_1);
             Controls.Add(P_SurnameTextBox_1);
             Controls.Add(P_GenderLabel_1);
-            Controls.Add(P_GenderTextBox_1);
             Controls.Add(RegPatientLabel_1);
             Controls.Add(P_FullNameLabel);
             Controls.Add(P_FullNameTextBox_1);
@@ -304,14 +329,15 @@
 
         private Button RegPatientButtom_1;
         private TextBox P_PhoneNumberTextBox_1;
-        private TextBox P_AddressTextBox_1;
         private TextBox P_SurnameTextBox_1;
-        private TextBox P_GenderTextBox_1;
         private TextBox P_FullNameTextBox_1;
-        private TextBox P_MedInstTextBox1;
+        private TextBox P_EmailTextBox1;
         private TextBox P_DoctorFullNameTextBox_1;
         private TextBox P_DoctorSurnameTextBox_1;
         private TextBox P_AgeTextBox_1;
-        private TextBox P_DateBirthTextBox_1;
+        private TextBox P_MiddleNameTextBox_1;
+        private DateTimePicker P_DateTimePicker_1;
+        private ComboBox P_GenderComboBox_1;
+        private TextBox P_DoctorMiddleNameTextBox_1;
     }
 }

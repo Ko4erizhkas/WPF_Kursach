@@ -39,17 +39,23 @@
             Label D_AddressLabel;
             Label D_MedInstLabel;
             Label D_YearsLabel;
+            Label D_SalaryLabel_1;
+            Label D_MiddleNameLabel_1;
+            Label D_EmailAddressLabel_1;
             D_FullNameTextBox_1 = new TextBox();
             D_SpecTextBox_1 = new TextBox();
             D_SurnameTextBox_1 = new TextBox();
             D_ExpTextBox_1 = new TextBox();
             D_PhoneNumberTextBox_1 = new TextBox();
             RegDoctorButtom_1 = new Button();
-            D_DateBirthTextBox_1 = new TextBox();
             D_GenderTextBox_1 = new TextBox();
             D_AddressTextBox_1 = new TextBox();
             D_MedInstTextBox_1 = new TextBox();
             D_YearsTextBox_1 = new TextBox();
+            D_SalaryTextBox_1 = new TextBox();
+            D_MiddleNameTextBox_1 = new TextBox();
+            D_EmailAddressTextBox_1 = new TextBox();
+            D_DateTimePicker_1 = new DateTimePicker();
             D_FullNameLabel = new Label();
             D_SpecLabel_1 = new Label();
             D_SurnameLabel_1 = new Label();
@@ -61,6 +67,9 @@
             D_AddressLabel = new Label();
             D_MedInstLabel = new Label();
             D_YearsLabel = new Label();
+            D_SalaryLabel_1 = new Label();
+            D_MiddleNameLabel_1 = new Label();
+            D_EmailAddressLabel_1 = new Label();
             SuspendLayout();
             // 
             // D_FullNameLabel
@@ -117,7 +126,7 @@
             // 
             RegDoctorLabel_1.AutoSize = true;
             RegDoctorLabel_1.Font = new Font("Segoe UI", 9F);
-            RegDoctorLabel_1.Location = new Point(94, 9);
+            RegDoctorLabel_1.Location = new Point(186, 9);
             RegDoctorLabel_1.Name = "RegDoctorLabel_1";
             RegDoctorLabel_1.Size = new Size(123, 15);
             RegDoctorLabel_1.TabIndex = 2;
@@ -173,6 +182,36 @@
             D_YearsLabel.TabIndex = 21;
             D_YearsLabel.Text = "Возраст";
             // 
+            // D_SalaryLabel_1
+            // 
+            D_SalaryLabel_1.AutoSize = true;
+            D_SalaryLabel_1.Font = new Font("Segoe UI", 9F);
+            D_SalaryLabel_1.Location = new Point(354, 53);
+            D_SalaryLabel_1.Name = "D_SalaryLabel_1";
+            D_SalaryLabel_1.Size = new Size(115, 15);
+            D_SalaryLabel_1.TabIndex = 23;
+            D_SalaryLabel_1.Text = "Зарплата (в месяц) ";
+            // 
+            // D_MiddleNameLabel_1
+            // 
+            D_MiddleNameLabel_1.AutoSize = true;
+            D_MiddleNameLabel_1.Font = new Font("Segoe UI", 9F);
+            D_MiddleNameLabel_1.Location = new Point(354, 113);
+            D_MiddleNameLabel_1.Name = "D_MiddleNameLabel_1";
+            D_MiddleNameLabel_1.Size = new Size(58, 15);
+            D_MiddleNameLabel_1.TabIndex = 39;
+            D_MiddleNameLabel_1.Text = "Отчество";
+            // 
+            // D_EmailAddressLabel_1
+            // 
+            D_EmailAddressLabel_1.AutoSize = true;
+            D_EmailAddressLabel_1.Font = new Font("Segoe UI", 9F);
+            D_EmailAddressLabel_1.Location = new Point(354, 167);
+            D_EmailAddressLabel_1.Name = "D_EmailAddressLabel_1";
+            D_EmailAddressLabel_1.Size = new Size(41, 15);
+            D_EmailAddressLabel_1.TabIndex = 41;
+            D_EmailAddressLabel_1.Text = "E-mail";
+            // 
             // D_FullNameTextBox_1
             // 
             D_FullNameTextBox_1.Location = new Point(12, 81);
@@ -210,20 +249,13 @@
             // 
             // RegDoctorButtom_1
             // 
-            RegDoctorButtom_1.Location = new Point(94, 344);
+            RegDoctorButtom_1.Location = new Point(158, 347);
             RegDoctorButtom_1.Name = "RegDoctorButtom_1";
             RegDoctorButtom_1.Size = new Size(140, 50);
             RegDoctorButtom_1.TabIndex = 11;
             RegDoctorButtom_1.Text = "Зарегестировать доктора";
             RegDoctorButtom_1.UseVisualStyleBackColor = true;
             RegDoctorButtom_1.Click += AuthDoctorButtom_1_Click;
-            // 
-            // D_DateBirthTextBox_1
-            // 
-            D_DateBirthTextBox_1.Location = new Point(186, 81);
-            D_DateBirthTextBox_1.Name = "D_DateBirthTextBox_1";
-            D_DateBirthTextBox_1.Size = new Size(140, 23);
-            D_DateBirthTextBox_1.TabIndex = 12;
             // 
             // D_GenderTextBox_1
             // 
@@ -253,11 +285,46 @@
             D_YearsTextBox_1.Size = new Size(140, 23);
             D_YearsTextBox_1.TabIndex = 20;
             // 
+            // D_SalaryTextBox_1
+            // 
+            D_SalaryTextBox_1.Location = new Point(354, 81);
+            D_SalaryTextBox_1.Name = "D_SalaryTextBox_1";
+            D_SalaryTextBox_1.Size = new Size(115, 23);
+            D_SalaryTextBox_1.TabIndex = 24;
+            // 
+            // D_MiddleNameTextBox_1
+            // 
+            D_MiddleNameTextBox_1.Location = new Point(354, 141);
+            D_MiddleNameTextBox_1.Name = "D_MiddleNameTextBox_1";
+            D_MiddleNameTextBox_1.Size = new Size(140, 23);
+            D_MiddleNameTextBox_1.TabIndex = 38;
+            // 
+            // D_EmailAddressTextBox_1
+            // 
+            D_EmailAddressTextBox_1.Location = new Point(354, 191);
+            D_EmailAddressTextBox_1.Name = "D_EmailAddressTextBox_1";
+            D_EmailAddressTextBox_1.Size = new Size(140, 23);
+            D_EmailAddressTextBox_1.TabIndex = 40;
+            // 
+            // D_DateTimePicker_1
+            // 
+            D_DateTimePicker_1.Location = new Point(186, 83);
+            D_DateTimePicker_1.Name = "D_DateTimePicker_1";
+            D_DateTimePicker_1.Size = new Size(124, 23);
+            D_DateTimePicker_1.TabIndex = 42;
+            // 
             // RegDoctorForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(338, 406);
+            ClientSize = new Size(552, 441);
+            Controls.Add(D_DateTimePicker_1);
+            Controls.Add(D_EmailAddressLabel_1);
+            Controls.Add(D_EmailAddressTextBox_1);
+            Controls.Add(D_MiddleNameLabel_1);
+            Controls.Add(D_MiddleNameTextBox_1);
+            Controls.Add(D_SalaryTextBox_1);
+            Controls.Add(D_SalaryLabel_1);
             Controls.Add(D_YearsLabel);
             Controls.Add(D_YearsTextBox_1);
             Controls.Add(D_MedInstLabel);
@@ -267,7 +334,6 @@
             Controls.Add(D_GenderLabel);
             Controls.Add(D_GenderTextBox_1);
             Controls.Add(D_DateBirthLabel);
-            Controls.Add(D_DateBirthTextBox_1);
             Controls.Add(RegDoctorButtom_1);
             Controls.Add(D_PhoneNumber_1);
             Controls.Add(D_PhoneNumberTextBox_1);
@@ -301,10 +367,13 @@
         private Label D_PhoneNumber_1;
         private TextBox D_PhoneNumberTextBox_1;
         private Button RegDoctorButtom_1;
-        private TextBox D_DateBirthTextBox_1;
         private TextBox D_GenderTextBox_1;
         private TextBox D_AddressTextBox_1;
         private TextBox D_MedInstTextBox_1;
         private TextBox D_YearsTextBox_1;
+        private TextBox D_SalaryTextBox_1;
+        private TextBox D_MiddleNameTextBox_1;
+        private TextBox D_EmailAddressTextBox_1;
+        private DateTimePicker D_DateTimePicker_1;
     }
 }

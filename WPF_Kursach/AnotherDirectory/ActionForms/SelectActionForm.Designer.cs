@@ -1,6 +1,6 @@
 ﻿namespace WPF_Kursach
 {
-    partial class SelectAction
+    partial class SelectActionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@
         {
             AddDoctorButtom = new Button();
             AddPatient = new Button();
+            CloseButtom = new Button();
             SuspendLayout();
             // 
             // AddDoctorButtom
@@ -52,14 +53,25 @@
             AddPatient.UseVisualStyleBackColor = true;
             AddPatient.Click += AddPatientButtom_Click;
             // 
-            // SelectAction
+            // CloseButtom
+            // 
+            CloseButtom.Location = new Point(71, 106);
+            CloseButtom.Name = "CloseButtom";
+            CloseButtom.Size = new Size(106, 68);
+            CloseButtom.TabIndex = 2;
+            CloseButtom.Text = "Закрыть приложение";
+            CloseButtom.UseVisualStyleBackColor = true;
+            CloseButtom.Click += this.CloseButtom_Click;
+            // 
+            // SelectActionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(247, 186);
+            Controls.Add(CloseButtom);
             Controls.Add(AddPatient);
             Controls.Add(AddDoctorButtom);
-            Name = "SelectAction";
+            Name = "SelectActionForm";
             Text = "SelectAction";
             Load += SelectAction_Load;
             ResumeLayout(false);
@@ -69,5 +81,6 @@
 
         private Button AddDoctorButtom;
         private Button AddPatient;
+        private Button CloseButtom;
     }
 }
