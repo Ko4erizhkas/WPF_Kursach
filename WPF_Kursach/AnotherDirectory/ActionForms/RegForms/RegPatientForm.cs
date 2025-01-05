@@ -38,7 +38,7 @@ namespace WPF_Kursach
 
             uint P_Age = Convert.ToUInt32(P_AgeTextBox_1.Text);
 
-            DateTime P_DateBirth = P_DateTimePicker_1.Value;
+            DateOnly P_DateBirth = DateOnly.FromDateTime(P_DateTimePicker_1.Value);
             Doctor P_CurrentDoctor = new Doctor(P_DoctorFullName, P_DoctorSurname, P_DoctorMiddleName);
 
             string? P_Gender;
@@ -49,7 +49,8 @@ namespace WPF_Kursach
             else
             {
                 P_Gender = string.Empty;
-                MessageBox.Show("Да-да это null");
+                MessageBox.Show("Ошибка: NullReferenceException \n Введена пустая строка!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                throw new NullReferenceException("P_Gender is null!");
             }
 
             var NewPatient = new Patient(P_FullName, P_Surname, P_MiddleName, P_DateBirth,

@@ -10,15 +10,15 @@ namespace WPF_Kursach.AnotherDirectory.ControlDirectory
 {
     public class Person
     {
-        private uint _Age;
+        private uint? _Age;
         [JsonPropertyName("FullName")]
         public string? FullName { get; set; }
         [JsonPropertyName("Surname")]
-        public string Surname { get; set; }
+        public string? Surname { get; set; }
         [JsonPropertyName("MiddleName")]
-        public string MiddleName { get; set; } // Отчество
+        public string? MiddleName { get; set; } // Отчество
         [JsonPropertyName("Years")]
-        public uint Age
+        public uint? Age
         {
             get { return _Age; }
 

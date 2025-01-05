@@ -233,7 +233,7 @@
             // 
             P_EmailTextBox1.Location = new Point(156, 146);
             P_EmailTextBox1.Name = "P_EmailTextBox1";
-            P_EmailTextBox1.Size = new Size(140, 23);
+            P_EmailTextBox1.Size = new Size(179, 23);
             P_EmailTextBox1.TabIndex = 24;
             // 
             // P_DoctorFullNameTextBox_1

@@ -19,10 +19,9 @@ namespace WPF_Kursach.AnotherDirectory.ControlDirectory
         [JsonPropertyName("Id")]
         public string? Id { get; set; } // Work in progress
         [JsonPropertyName("DataBirth")]
-        public DateTime DateBirth { get; private set; }
+        public DateOnly? DateBirth { get; private set; }
         [JsonPropertyName("Gender")]
         public string? Gender { get; set; }
-
         [JsonPropertyName("PhoneNumber")]
         public string? PhoneNumber { get; set; }
         [JsonPropertyName("EmailAddress")]
@@ -32,7 +31,7 @@ namespace WPF_Kursach.AnotherDirectory.ControlDirectory
         [JsonPropertyName("CurrentDoctor")]
         public Doctor? CurrentDoctor { get; set; }
         public Patient(string _FullName, string _Surname, string _MiddleName, 
-                       DateTime _DateBirth, string _Gender, 
+                       DateOnly _DateBirth, string _Gender, 
                        string _PhoneNumber, string _Email , uint _Age) : 
                        base(_FullName, _Surname, _MiddleName, _Age)
         {
@@ -43,7 +42,7 @@ namespace WPF_Kursach.AnotherDirectory.ControlDirectory
             this.Email = _Email;
         }
         public Patient(string _FullName, string _Surname, string _MiddleName, 
-                       DateTime _DateBirth, string _Gender,
+                       DateOnly _DateBirth, string _Gender,
                        string _PhoneNumber, string _Email, uint _Age, 
                        Doctor _CurrentDoctor) :
                        base(_FullName, _Surname, _MiddleName, _Age)

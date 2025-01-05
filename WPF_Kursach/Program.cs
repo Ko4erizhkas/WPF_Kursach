@@ -1,4 +1,5 @@
 using WPF_Kursach.ActionForms;
+using WPF_Kursach.AnotherDirectory.ActionForms.RegForms;
 using WPF_Kursach.Polyclinic;
 
 namespace WPF_Kursach

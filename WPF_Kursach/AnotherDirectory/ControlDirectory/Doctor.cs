@@ -11,56 +11,30 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WPF_Kursach.AnotherDirectory.ControlDirectory
 {
-    public class Doctor : Patient
+    public class Doctor : Employee
     {
-        private int _ExpYears;
-        [JsonPropertyName("Specialty")]
-        public string? Specialty { get; set; }
-        [JsonPropertyName("ExperienceYears")]
-        public int ExperienceYears
-        {
-            get
-            {
-                return _ExpYears;
-            }
-            set
-            {
-                if (value <= 0)
-                {
-                    _ExpYears = 0;
-                    throw new ArgumentOutOfRangeException("Negative Value or Zero");
-                }
-                else
-                {
-                    _ExpYears = value;
-                }
-            }
-        }
+        [JsonPropertyName("MedArea")]
+        public string? MedArea { get; set; }
         [JsonPropertyName("Salary")]
-        public decimal Salary { get; set; }
-        public Doctor(string _FullName, string _Surname, string _MiddleName, 
-                      string _Speciality, int _ExperienceYears,
-                      string _PhoneNumber, DateTime _DateBirth,
-                      string _Gender, string _Address,
-                      string _EmailAddress, uint _Age)
-        : base(_FullName, _Surname, _MiddleName, _DateBirth, _Gender,
-              _PhoneNumber, _EmailAddress, _Age)
-        {
-            this.Specialty = _Speciality;
-            this.ExperienceYears = _ExperienceYears;
-        }
+        public decimal? Salary { get; set; }
+        [JsonPropertyName("MedBranch")]
+        public string? MedBranch { get; set; }
+        [JsonPropertyName("Description")]
+        public string? Description { get; set; }
         public Doctor(string _FullName, string _Surname, string _MiddleName,
-                      string _Speciality, int _ExperienceYears,
-                      string _PhoneNumber, DateTime _DateBirth,
-                      string _Gender, string _Address,
-                      string _EmailAddress, uint _Age, decimal _Salary)
-        : base(_FullName, _Surname, _MiddleName, _DateBirth, _Gender,
-              _PhoneNumber, _EmailAddress, _Age)
+                      string _Spec, string _Id, string _PhoneNumber, 
+                      string _Degree, string _Snils, string _MegArea,
+                      string _MedBranch, string _Description, decimal _Salary) :
+               base(_FullName, _Surname, _MiddleName, 
+                    _Spec, _Id, _PhoneNumber,
+                    _Degree, _Snils)
         {
-            this.Specialty = _Speciality;
-            this.ExperienceYears = _ExperienceYears;
+            this.MedArea = _MegArea;
+            this.MedBranch = _MedBranch;
+            this.Description = _Description;
             this.Salary = _Salary;
         }
-        public Doctor(string _FullName, string _Surname, string _MiddleName) : base(_FullName, _Surname, _MiddleName) { }
+        public Doctor(string _FullName, string _Surname, string _MiddleName) : 
+               base(_FullName, _Surname, _MiddleName) { }
     }
 }
