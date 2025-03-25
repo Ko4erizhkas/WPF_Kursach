@@ -35,16 +35,17 @@
             // 
             // SelectPolyButton_1
             // 
-            SelectPolyButton_1.Location = new Point(78, 91);
+            SelectPolyButton_1.Location = new Point(10, 40);
             SelectPolyButton_1.Name = "SelectPolyButton_1";
             SelectPolyButton_1.Size = new Size(93, 42);
             SelectPolyButton_1.TabIndex = 0;
             SelectPolyButton_1.Text = "Поликлиника";
             SelectPolyButton_1.UseVisualStyleBackColor = true;
+            SelectPolyButton_1.Click += SelectPolyButton_1_Click;
             // 
             // SelectHospitalButton_1
             // 
-            SelectHospitalButton_1.Location = new Point(301, 91);
+            SelectHospitalButton_1.Location = new Point(110, 40);
             SelectHospitalButton_1.Name = "SelectHospitalButton_1";
             SelectHospitalButton_1.Size = new Size(96, 42);
             SelectHospitalButton_1.TabIndex = 1;
@@ -54,7 +55,7 @@
             // SelectOrgLabel_1
             // 
             SelectOrgLabel_1.AutoSize = true;
-            SelectOrgLabel_1.Location = new Point(162, 33);
+            SelectOrgLabel_1.Location = new Point(30, 10);
             SelectOrgLabel_1.Name = "SelectOrgLabel_1";
             SelectOrgLabel_1.Size = new Size(157, 15);
             SelectOrgLabel_1.TabIndex = 2;
@@ -64,12 +65,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(498, 247);
+            ClientSize = new Size(214, 111);
             Controls.Add(SelectOrgLabel_1);
             Controls.Add(SelectHospitalButton_1);
             Controls.Add(SelectPolyButton_1);
             Name = "SelectOrganizationForm";
-            Text = "SelectOrganizationForm";
+            Text = "Выбор организации";
             Load += SelectOrganizationForm_Load;
             ResumeLayout(false);
             PerformLayout();

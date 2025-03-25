@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
-using System.Windows.Forms;
-using WPF_Kursach.AnotherDirectory.ControlDirectory;
+﻿using WPF_Kursach.AnotherDirectory.ControlClasses;
 
 namespace WPF_Kursach
 {
@@ -20,7 +10,6 @@ namespace WPF_Kursach
         }
         private void AuthDoctorForm_Load(object sender, EventArgs e)
         {
-
         }
         private void AuthDoctorButtom_1_Click(object sender, EventArgs e)
         {
@@ -40,6 +29,7 @@ namespace WPF_Kursach
             string D_MedArea;
             string D_MedBranch;
             string D_Degree;
+            string D_MedRank;
 
             if (D_SpecComboBox_1.SelectedItem != null)
             {
@@ -47,8 +37,9 @@ namespace WPF_Kursach
             }
             else
             {
-                MessageBox.Show("Ошибка: NullReferenceException \n Введена пустая строка!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                throw new NullReferenceException("D_SpecName is null!");
+                
+                MessageBox.Show("Ошибка: NullReferenceException \n Введена пустая строка! Присвоено значение по умолчанию!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                throw new NullReferenceException("D_SpecComboBox_1.SelectedItem is null!");
             }
             if (D_MedAreaComboBox_1.SelectedItem != null)
             {
@@ -57,7 +48,7 @@ namespace WPF_Kursach
             else
             {
                 MessageBox.Show("Ошибка: NullReferenceException \n Введена пустая строка!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                throw new NullReferenceException("D_MedArea is null!");
+                throw new NullReferenceException("D_MedAreaComboBox_1.SelectedItem is null!");
             }
             if (D_MedBranchComboBox_1.SelectedItem != null)
             {
@@ -66,7 +57,7 @@ namespace WPF_Kursach
             else
             {
                 MessageBox.Show("Ошибка: NullReferenceException \n Введена пустая строка!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                throw new NullReferenceException("D_MedBranch is null!");
+                throw new NullReferenceException("D_MedBranchComboBox_1.SelectedItem is null!");
             }
             if (D_DegreeComboBox_1.SelectedItem != null)
             {
@@ -75,14 +66,22 @@ namespace WPF_Kursach
             else
             {
                 MessageBox.Show("Ошибка: NullReferenceException \n Введена пустая строка!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                throw new NullReferenceException("D_DegreeComboBox_1 is null!");
+                throw new NullReferenceException("D_DegreeComboBox_1.SelectedItem is null!");
             }
-
+            if (D_MedRankComboBox_1.SelectedItem != null)
+            {
+                D_MedRank = D_MedRankComboBox_1.SelectedItem.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Ошибка: NullReferenceException \n Введена пустая строка!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                throw new NullReferenceException("D_MedRankComboBox_1.SelectedItem is null!");
+            }
             decimal D_Salary = Convert.ToDecimal(D_SalaryTextBox_1.Text);
             var NewDoctor = new Doctor(D_FullName, D_Surname, D_MiddleName,
                                        D_SpecName, D_Id, D_PhoneNumber,
                                        D_Degree, D_Snils, D_MedArea,
-                                       D_MedBranch, D_Description, D_Salary);
+                                       D_MedBranch, D_MedRank ,D_Description, D_Salary);
 
             generatorFiles.GenerateFile(@"E:\Курсач\Doctor", "Doctor", NewDoctor);
 
@@ -96,5 +95,4 @@ namespace WPF_Kursach
             this.Close();
         }
     }
-
 }

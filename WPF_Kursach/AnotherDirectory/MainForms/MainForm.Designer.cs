@@ -1,6 +1,6 @@
-﻿namespace WPF_Kursach.Polyclinic
+﻿namespace WPF_Kursach.AnotherDirectory.MainForms
 {
-    partial class Polyclinic_RegPatient
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Polyclinic_AddPatient = new Button();
             SuspendLayout();
             // 
-            // Polyclinic_AddPatient
-            // 
-            Polyclinic_AddPatient.Location = new Point(12, 12);
-            Polyclinic_AddPatient.Name = "Polyclinic_AddPatient";
-            Polyclinic_AddPatient.Size = new Size(106, 68);
-            Polyclinic_AddPatient.TabIndex = 2;
-            Polyclinic_AddPatient.Text = "Зарегистрировать пациента";
-            Polyclinic_AddPatient.UseVisualStyleBackColor = true;
-            Polyclinic_AddPatient.Click += Polyclinic_AddPatient_Click;
-            // 
-            // Polyclinic_RegPatient
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(387, 241);
-            Controls.Add(Polyclinic_AddPatient);
-            Name = "Polyclinic_RegPatient";
-            Text = "Регистрация ";
+            ClientSize = new Size(800, 450);
+            Name = "MainForm";
+            Text = "MainForm";
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Button Polyclinic_AddPatient;
     }
 }

@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using WPF_Kursach.AnotherDirectory.ControlDirectory;
+﻿using WPF_Kursach.AnotherDirectory.ControlClasses;
 
 namespace WPF_Kursach.AnotherDirectory.ActionForms.RegForms
 {
@@ -40,7 +31,7 @@ namespace WPF_Kursach.AnotherDirectory.ActionForms.RegForms
             {
                 Emp_Degree = Emp_DegreeComboBox_1.SelectedItem.ToString();
             }
-            else 
+            else
             {
                 Emp_Degree = string.Empty;
                 MessageBox.Show("Ошибка: NullReferenceException \n Введена пустая строка!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -50,7 +41,7 @@ namespace WPF_Kursach.AnotherDirectory.ActionForms.RegForms
             string Emp_Spec;
             if (Emp_SpecComboBox_1.SelectedItem != null)
             {
-                Emp_Spec = Emp_SpecComboBox_1.SelectedItem.ToString();   
+                Emp_Spec = Emp_SpecComboBox_1.SelectedItem.ToString();
             }
             else
             {
@@ -59,8 +50,8 @@ namespace WPF_Kursach.AnotherDirectory.ActionForms.RegForms
                 throw new NullReferenceException("Emp_Spec is null!");
             }
 
-            var NewEmployee = new Employee(Emp_FullName, Emp_Surname, Emp_MiddleName, 
-                                           Emp_Spec, Emp_ID, Emp_PhoneNumber, 
+            var NewEmployee = new Employee(Emp_FullName, Emp_Surname, Emp_MiddleName,
+                                           Emp_Spec, Emp_ID, Emp_PhoneNumber,
                                            Emp_Degree, Emp_Snils);
 
             generatorFiles.GenerateFile(@"E:\Курсач\Employee", "Employee", NewEmployee);

@@ -41,7 +41,7 @@
             // RegOrgLabel_1
             // 
             RegOrgLabel_1.AutoSize = true;
-            RegOrgLabel_1.Location = new Point(72, 9);
+            RegOrgLabel_1.Location = new Point(48, 9);
             RegOrgLabel_1.Name = "RegOrgLabel_1";
             RegOrgLabel_1.Size = new Size(150, 15);
             RegOrgLabel_1.TabIndex = 3;
@@ -49,7 +49,7 @@
             // 
             // RegOrgButton_1
             // 
-            RegOrgButton_1.Location = new Point(72, 298);
+            RegOrgButton_1.Location = new Point(48, 295);
             RegOrgButton_1.Name = "RegOrgButton_1";
             RegOrgButton_1.Size = new Size(126, 42);
             RegOrgButton_1.TabIndex = 4;
@@ -58,21 +58,21 @@
             // 
             // RegOrg_NameTextBox_1
             // 
-            RegOrg_NameTextBox_1.Location = new Point(37, 73);
+            RegOrg_NameTextBox_1.Location = new Point(12, 73);
             RegOrg_NameTextBox_1.Name = "RegOrg_NameTextBox_1";
             RegOrg_NameTextBox_1.Size = new Size(211, 23);
             RegOrg_NameTextBox_1.TabIndex = 5;
             // 
             // RegOrg_AddressTextBox_1
             // 
-            RegOrg_AddressTextBox_1.Location = new Point(37, 126);
+            RegOrg_AddressTextBox_1.Location = new Point(12, 126);
             RegOrg_AddressTextBox_1.Name = "RegOrg_AddressTextBox_1";
             RegOrg_AddressTextBox_1.Size = new Size(211, 23);
             RegOrg_AddressTextBox_1.TabIndex = 6;
             // 
             // RegOrg_DescTextBox_1
             // 
-            RegOrg_DescTextBox_1.Location = new Point(37, 183);
+            RegOrg_DescTextBox_1.Location = new Point(12, 183);
             RegOrg_DescTextBox_1.Multiline = true;
             RegOrg_DescTextBox_1.Name = "RegOrg_DescTextBox_1";
             RegOrg_DescTextBox_1.Size = new Size(211, 85);
@@ -81,7 +81,7 @@
             // RegOrg_DescLabel_1
             // 
             RegOrg_DescLabel_1.AutoSize = true;
-            RegOrg_DescLabel_1.Location = new Point(37, 165);
+            RegOrg_DescLabel_1.Location = new Point(12, 165);
             RegOrg_DescLabel_1.Name = "RegOrg_DescLabel_1";
             RegOrg_DescLabel_1.Size = new Size(62, 15);
             RegOrg_DescLabel_1.TabIndex = 8;
@@ -90,7 +90,7 @@
             // RegOrg_AddressLabel_1
             // 
             RegOrg_AddressLabel_1.AutoSize = true;
-            RegOrg_AddressLabel_1.Location = new Point(37, 108);
+            RegOrg_AddressLabel_1.Location = new Point(12, 108);
             RegOrg_AddressLabel_1.Name = "RegOrg_AddressLabel_1";
             RegOrg_AddressLabel_1.Size = new Size(114, 15);
             RegOrg_AddressLabel_1.TabIndex = 9;
@@ -99,7 +99,7 @@
             // RegOrg_NameLabel_1
             // 
             RegOrg_NameLabel_1.AutoSize = true;
-            RegOrg_NameLabel_1.Location = new Point(37, 55);
+            RegOrg_NameLabel_1.Location = new Point(12, 55);
             RegOrg_NameLabel_1.Name = "RegOrg_NameLabel_1";
             RegOrg_NameLabel_1.Size = new Size(133, 15);
             RegOrg_NameLabel_1.TabIndex = 10;
@@ -109,7 +109,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(276, 395);
+            ClientSize = new Size(506, 395);
             Controls.Add(RegOrg_NameLabel_1);
             Controls.Add(RegOrg_AddressLabel_1);
             Controls.Add(RegOrg_DescLabel_1);

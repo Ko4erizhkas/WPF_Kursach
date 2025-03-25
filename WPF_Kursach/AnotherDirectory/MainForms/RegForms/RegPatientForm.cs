@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using WPF_Kursach.AnotherDirectory.ControlDirectory;
+﻿using WPF_Kursach.AnotherDirectory.ControlClasses;
 
 namespace WPF_Kursach
 {
@@ -24,7 +15,7 @@ namespace WPF_Kursach
         private void RegPatientButtom_1_Click(object sender, EventArgs e)
         {
             GeneratorFiles generatorFiles = new GeneratorFiles();
-            
+
 
             string P_FullName = P_FullNameTextBox_1.Text;
             string P_Surname = P_SurnameTextBox_1.Text;
@@ -36,10 +27,10 @@ namespace WPF_Kursach
             string P_DoctorMiddleName = P_DoctorMiddleNameTextBox_1.Text;
 
 
-            uint P_Age = Convert.ToUInt32(P_AgeTextBox_1.Text);
+            int P_Age = Convert.ToInt32(P_AgeTextBox_1.Text);
 
             DateOnly P_DateBirth = DateOnly.FromDateTime(P_DateTimePicker_1.Value);
-            Doctor P_CurrentDoctor = new Doctor(P_DoctorFullName, P_DoctorSurname, P_DoctorMiddleName);
+            Doctor P_CurrentDoctor = new Doctor(P_DoctorFullName,P_DoctorSurname, P_DoctorMiddleName, null, null,null,null,null);
 
             string? P_Gender;
             if (P_GenderComboBox_1.SelectedItem != null)
@@ -49,10 +40,18 @@ namespace WPF_Kursach
             else
             {
                 P_Gender = string.Empty;
-                MessageBox.Show("Ошибка: NullReferenceException \n Введена пустая строка!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "Ошибка: NullReferenceException" +
+                    " \n Введена пустая строка!",
+                    "Ошибка!", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Warning);
                 throw new NullReferenceException("P_Gender is null!");
             }
-
+            if (P_Age < 0)
+            {
+                MessageBox.Show("Введено некоректное значение! Установлено значение по умолчанию.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             var NewPatient = new Patient(P_FullName, P_Surname, P_MiddleName, P_DateBirth,
                                          P_Gender, P_PhoneNumber,
                                          P_EmailAddress, P_Age, P_CurrentDoctor);
@@ -60,7 +59,11 @@ namespace WPF_Kursach
             generatorFiles.GenerateFile(@"E:\Курсач\Patient", "Patient", NewPatient);
 
             this.Close();
-            MessageBox.Show("Данные успешно сохранены!", "Готово!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(
+                "Данные успешно сохранены!",
+                "Готово!", 
+                MessageBoxButtons.OK, 
+                MessageBoxIcon.Information);
         }
     }
 }

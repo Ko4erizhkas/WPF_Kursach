@@ -59,6 +59,8 @@
             D_CloseButton_1 = new Button();
             D_IdLabel_1 = new Label();
             D_IdTextBox_1 = new TextBox();
+            D_MedRankLabel_1 = new Label();
+            D_MedRankComboBox_1 = new ComboBox();
             D_FullNameLabel = new Label();
             D_SpecLabel_1 = new Label();
             D_SurnameLabel_1 = new Label();
@@ -205,7 +207,7 @@
             // 
             // RegDoctorButtom_1
             // 
-            RegDoctorButtom_1.Location = new Point(250, 577);
+            RegDoctorButtom_1.Location = new Point(178, 577);
             RegDoctorButtom_1.Name = "RegDoctorButtom_1";
             RegDoctorButtom_1.Size = new Size(140, 50);
             RegDoctorButtom_1.TabIndex = 11;
@@ -307,7 +309,7 @@
             D_DescriptionTextBox_1.Location = new Point(12, 350);
             D_DescriptionTextBox_1.Multiline = true;
             D_DescriptionTextBox_1.Name = "D_DescriptionTextBox_1";
-            D_DescriptionTextBox_1.Size = new Size(306, 142);
+            D_DescriptionTextBox_1.Size = new Size(477, 190);
             D_DescriptionTextBox_1.TabIndex = 51;
             // 
             // D_DescriptionLabel_1
@@ -321,7 +323,7 @@
             // 
             // D_CloseButton_1
             // 
-            D_CloseButton_1.Location = new Point(400, 577);
+            D_CloseButton_1.Location = new Point(347, 577);
             D_CloseButton_1.Name = "D_CloseButton_1";
             D_CloseButton_1.Size = new Size(140, 50);
             D_CloseButton_1.TabIndex = 53;
@@ -345,11 +347,31 @@
             D_IdTextBox_1.Size = new Size(141, 23);
             D_IdTextBox_1.TabIndex = 54;
             // 
+            // D_MedRankLabel_1
+            // 
+            D_MedRankLabel_1.AutoSize = true;
+            D_MedRankLabel_1.Location = new Point(347, 230);
+            D_MedRankLabel_1.Name = "D_MedRankLabel_1";
+            D_MedRankLabel_1.Size = new Size(107, 15);
+            D_MedRankLabel_1.TabIndex = 57;
+            D_MedRankLabel_1.Text = "Врачебное звание";
+            // 
+            // D_MedRankComboBox_1
+            // 
+            D_MedRankComboBox_1.FormattingEnabled = true;
+            D_MedRankComboBox_1.Items.AddRange(new object[] { "Врач-интерн", "Врач-ординатор", "Врач-специалист", "Старший врач", "Главный врач", "Заведующий отделением", "Научный сотрудник" });
+            D_MedRankComboBox_1.Location = new Point(347, 248);
+            D_MedRankComboBox_1.Name = "D_MedRankComboBox_1";
+            D_MedRankComboBox_1.Size = new Size(140, 23);
+            D_MedRankComboBox_1.TabIndex = 56;
+            // 
             // RegDoctorForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(552, 652);
+            ClientSize = new Size(499, 652);
+            Controls.Add(D_MedRankLabel_1);
+            Controls.Add(D_MedRankComboBox_1);
             Controls.Add(D_IdLabel_1);
             Controls.Add(D_IdTextBox_1);
             Controls.Add(D_CloseButton_1);
@@ -382,7 +404,7 @@
             Controls.Add(D_FullNameLabel);
             Controls.Add(D_FullNameTextBox_1);
             Name = "RegDoctorForm";
-            Text = "AuthDoctor";
+            Text = "Регистрация доктора";
             Load += AuthDoctorForm_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -415,5 +437,7 @@
         private Button D_CloseButton_1;
         private Label D_IdLabel_1;
         private TextBox D_IdTextBox_1;
+        private Label D_MedRankLabel_1;
+        private ComboBox D_MedRankComboBox_1;
     }
 }

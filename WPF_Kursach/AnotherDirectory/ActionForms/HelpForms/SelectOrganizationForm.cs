@@ -21,5 +21,10 @@ namespace WPF_Kursach.ActionForms
         {
 
         }
+
+        private void SelectPolyButton_1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

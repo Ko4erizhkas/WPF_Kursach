@@ -53,6 +53,8 @@
             P_DateTimePicker_1 = new DateTimePicker();
             P_GenderComboBox_1 = new ComboBox();
             P_DoctorMiddleNameTextBox_1 = new TextBox();
+            P_DescriptionLabel_1 = new Label();
+            D_DescriptionTextBox_1 = new TextBox();
             P_PhoneNumber_1 = new Label();
             P_SurnameLabel_1 = new Label();
             P_GenderLabel_1 = new Label();
@@ -72,7 +74,7 @@
             // 
             P_PhoneNumber_1.AutoSize = true;
             P_PhoneNumber_1.Font = new Font("Segoe UI", 9F);
-            P_PhoneNumber_1.Location = new Point(11, 182);
+            P_PhoneNumber_1.Location = new Point(14, 182);
             P_PhoneNumber_1.Name = "P_PhoneNumber_1";
             P_PhoneNumber_1.Size = new Size(101, 15);
             P_PhoneNumber_1.TabIndex = 22;
@@ -162,7 +164,7 @@
             // 
             P_AgeLabel_1.AutoSize = true;
             P_AgeLabel_1.Font = new Font("Segoe UI", 9F);
-            P_AgeLabel_1.Location = new Point(10, 228);
+            P_AgeLabel_1.Location = new Point(14, 228);
             P_AgeLabel_1.Name = "P_AgeLabel_1";
             P_AgeLabel_1.Size = new Size(50, 15);
             P_AgeLabel_1.TabIndex = 33;
@@ -182,7 +184,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F);
-            label1.Location = new Point(11, 116);
+            label1.Location = new Point(14, 118);
             label1.Name = "label1";
             label1.Size = new Size(90, 15);
             label1.TabIndex = 40;
@@ -200,7 +202,7 @@
             // 
             // RegPatientButtom_1
             // 
-            RegPatientButtom_1.Location = new Point(156, 470);
+            RegPatientButtom_1.Location = new Point(350, 466);
             RegPatientButtom_1.Name = "RegPatientButtom_1";
             RegPatientButtom_1.Size = new Size(140, 50);
             RegPatientButtom_1.TabIndex = 23;
@@ -224,7 +226,7 @@
             // 
             // P_FullNameTextBox_1
             // 
-            P_FullNameTextBox_1.Location = new Point(12, 81);
+            P_FullNameTextBox_1.Location = new Point(14, 81);
             P_FullNameTextBox_1.Name = "P_FullNameTextBox_1";
             P_FullNameTextBox_1.Size = new Size(140, 23);
             P_FullNameTextBox_1.TabIndex = 12;
@@ -233,7 +235,7 @@
             // 
             P_EmailTextBox1.Location = new Point(156, 146);
             P_EmailTextBox1.Name = "P_EmailTextBox1";
-            P_EmailTextBox1.Size = new Size(179, 23);
+            P_EmailTextBox1.Size = new Size(142, 23);
             P_EmailTextBox1.TabIndex = 24;
             // 
             // P_DoctorFullNameTextBox_1
@@ -252,7 +254,7 @@
             // 
             // P_AgeTextBox_1
             // 
-            P_AgeTextBox_1.Location = new Point(10, 246);
+            P_AgeTextBox_1.Location = new Point(14, 246);
             P_AgeTextBox_1.Name = "P_AgeTextBox_1";
             P_AgeTextBox_1.Size = new Size(140, 23);
             P_AgeTextBox_1.TabIndex = 32;
@@ -267,7 +269,7 @@
             // P_DateTimePicker_1
             // 
             P_DateTimePicker_1.CustomFormat = "dd.mm.yy";
-            P_DateTimePicker_1.Location = new Point(12, 143);
+            P_DateTimePicker_1.Location = new Point(14, 143);
             P_DateTimePicker_1.Name = "P_DateTimePicker_1";
             P_DateTimePicker_1.Size = new Size(138, 23);
             P_DateTimePicker_1.TabIndex = 38;
@@ -278,7 +280,7 @@
             P_GenderComboBox_1.Items.AddRange(new object[] { "Мужской", "Женский", "Неопределено" });
             P_GenderComboBox_1.Location = new Point(158, 200);
             P_GenderComboBox_1.Name = "P_GenderComboBox_1";
-            P_GenderComboBox_1.Size = new Size(121, 23);
+            P_GenderComboBox_1.Size = new Size(140, 23);
             P_GenderComboBox_1.TabIndex = 41;
             // 
             // P_DoctorMiddleNameTextBox_1
@@ -288,11 +290,30 @@
             P_DoctorMiddleNameTextBox_1.Size = new Size(140, 23);
             P_DoctorMiddleNameTextBox_1.TabIndex = 42;
             // 
+            // P_DescriptionLabel_1
+            // 
+            P_DescriptionLabel_1.AutoSize = true;
+            P_DescriptionLabel_1.Location = new Point(14, 275);
+            P_DescriptionLabel_1.Name = "P_DescriptionLabel_1";
+            P_DescriptionLabel_1.Size = new Size(135, 15);
+            P_DescriptionLabel_1.TabIndex = 54;
+            P_DescriptionLabel_1.Text = "Примечание для врача";
+            // 
+            // D_DescriptionTextBox_1
+            // 
+            D_DescriptionTextBox_1.Location = new Point(14, 293);
+            D_DescriptionTextBox_1.Multiline = true;
+            D_DescriptionTextBox_1.Name = "D_DescriptionTextBox_1";
+            D_DescriptionTextBox_1.Size = new Size(478, 167);
+            D_DescriptionTextBox_1.TabIndex = 53;
+            // 
             // RegPatientForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(915, 554);
+            ClientSize = new Size(632, 528);
+            Controls.Add(P_DescriptionLabel_1);
+            Controls.Add(D_DescriptionTextBox_1);
             Controls.Add(P_DoctorMiddleNameLabel_1);
             Controls.Add(P_DoctorMiddleNameTextBox_1);
             Controls.Add(P_GenderComboBox_1);
@@ -339,5 +360,7 @@
         private DateTimePicker P_DateTimePicker_1;
         private ComboBox P_GenderComboBox_1;
         private TextBox P_DoctorMiddleNameTextBox_1;
+        private Label P_DescriptionLabel_1;
+        private TextBox D_DescriptionTextBox_1;
     }
 }

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-namespace WPF_Kursach.AnotherDirectory.ControlDirectory
+﻿using System.Text.Json;
+namespace WPF_Kursach.AnotherDirectory.ControlClasses
 {
     public class GeneratorFiles
     {
@@ -20,10 +15,10 @@ namespace WPF_Kursach.AnotherDirectory.ControlDirectory
                 var JsonFormater = new JsonSerializerOptions
                 {
                     // Читаемый формат JSON
-                    WriteIndented = true, 
+                    WriteIndented = true,
 
                     // Сохраняет кодировку текста в "читабильном" виде
-                    Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping 
+                    Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
                 };
                 var jsonContent = JsonSerializer.Serialize(fileContent, JsonFormater);
                 File.WriteAllText(filePath, jsonContent);

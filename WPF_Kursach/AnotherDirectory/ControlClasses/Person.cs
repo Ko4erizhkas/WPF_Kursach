@@ -1,41 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+﻿using System.Text.Json.Serialization;
 
-namespace WPF_Kursach.AnotherDirectory.ControlDirectory
+namespace WPF_Kursach.AnotherDirectory.ControlClasses
 {
-    public class Person
+    public abstract class Person
     {
-        private uint? _Age;
+        private int _Age;
         [JsonPropertyName("FullName")]
-        public string? FullName { get; set; }
+        public string FullName { get; private set; }
         [JsonPropertyName("Surname")]
-        public string? Surname { get; set; }
+        public string Surname { get; private set; }
         [JsonPropertyName("MiddleName")]
-        public string? MiddleName { get; set; } // Отчество
+        public string? MiddleName { get; private set; } // Отчество
         [JsonPropertyName("Years")]
-        public uint? Age
+        public int Age
         {
             get { return _Age; }
 
             set
             {
-                if (value <= 0)
+                if (value < 0)
                 {
                     _Age = 0;
-                    throw new ArgumentException("Zero or Negative Argument");
                 }
                 else
                 {
-                    value = _Age;
+                    _Age = value;
                 }
             }
         }
-        public Person(string _FullName, string _Surname, string _MiddleName, uint _Age)
+        public Person(string _FullName, string _Surname, string _MiddleName, int _Age)
         {
             this.FullName = _FullName;
             this.Surname = _Surname;

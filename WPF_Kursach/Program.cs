@@ -1,6 +1,4 @@
-using WPF_Kursach.ActionForms;
-using WPF_Kursach.AnotherDirectory.ActionForms.RegForms;
-using WPF_Kursach.Polyclinic;
+using WPF_Kursach.AnotherDirectory.MainForms;
 
 namespace WPF_Kursach
 {
@@ -15,7 +13,7 @@ namespace WPF_Kursach
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new RegPatientForm());
+            Application.Run(new MainForm());
             //Application.Run(new UploadInfoFromJsonForm());
         }
     }
