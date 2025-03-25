@@ -4,19 +4,30 @@ namespace WPF_Kursach.AnotherDirectory.MainForms
 {
     using System;
     using System.Collections.Generic;
+    using System.Text.Json;
     using System.Windows.Forms;
 
-    partial class MainForm : Form
+    public partial class MainForm : Form
     {
         private List<Hospital> hospitals = new List<Hospital>();
         private List<Polyclinic> polyclinics = new List<Polyclinic>();
         private ListBox lstHospitals, lstPolyclinics;
         private DataGridView dgvStaff, dgvPatients;
         private Button btnAddHospital, btnAddPolyclinic, btnAddDoctor, btnAddPatient;
-
+        private readonly string HospitalsFilePath;
+        private readonly string PolyclinicsFilePath;
+        private GeneratorFiles GF = new GeneratorFiles(); 
         public MainForm()
         {
+
+            string projectFolder = Application.StartupPath;
+            HospitalsFilePath = Path.Combine(projectFolder, "hospitals.json");
+            PolyclinicsFilePath = Path.Combine(projectFolder, "polyclinics.json");
+
             InitializeComponents();
+            GF.GenerateFile(projectFolder, HospitalsFilePath, hospitals);
+            GF.GenerateFile(projectFolder, PolyclinicsFilePath, polyclinics);
+
         }
 
         private void InitializeComponents()
@@ -24,23 +35,22 @@ namespace WPF_Kursach.AnotherDirectory.MainForms
             Width = 800;
             Height = 600;
 
-            // Список организаций
             lstHospitals = new ListBox { Left = 10, Top = 10, Width = 200, Height = 200 };
             lstPolyclinics = new ListBox { Left = 220, Top = 10, Width = 200, Height = 200 };
             lstHospitals.SelectedIndexChanged += (s, e) => UpdateGrids();
             lstPolyclinics.SelectedIndexChanged += (s, e) => UpdateGrids();
 
-            // Таблицы
             dgvStaff = new DataGridView { Left = 10, Top = 220, Width = 400, Height = 150, ReadOnly = true };
             dgvPatients = new DataGridView { Left = 10, Top = 380, Width = 400, Height = 150, ReadOnly = true };
-            dgvStaff.CellClick += DgvStaff_CellClick; // Добавляем обработчик клика
+            ConfigureStaffGrid();
+            ConfigurePatientsGrid();
+            dgvStaff.CellClick += DgvStaff_CellClick;
             dgvPatients.CellClick += DgvPatients_CellClick;
 
-            // Кнопки
-            btnAddHospital = new Button { Text = "Добавить больницу", Left = 430, Top = 10 };
-            btnAddPolyclinic = new Button { Text = "Добавить поликлинику", Left = 430, Top = 40 };
-            btnAddDoctor = new Button { Text = "Добавить врача", Left = 430, Top = 220 };
-            btnAddPatient = new Button { Text = "Добавить пациента", Left = 430, Top = 250 };
+            btnAddHospital = new Button { Text = "Добавить больницу", Left = 430, Top = 10, Width = 200 };
+            btnAddPolyclinic = new Button { Text = "Добавить поликлинику", Left = 430, Top = 40, Width = 200 };
+            btnAddDoctor = new Button { Text = "Добавить врача", Left = 430, Top = 220, Width = 200 };
+            btnAddPatient = new Button { Text = "Добавить пациента", Left = 430, Top = 250, Width = 200 };
 
             btnAddHospital.Click += (s, e) => AddHospital();
             btnAddPolyclinic.Click += (s, e) => AddPolyclinic();
@@ -49,7 +59,6 @@ namespace WPF_Kursach.AnotherDirectory.MainForms
 
             Controls.AddRange(new Control[] { lstHospitals, lstPolyclinics, dgvStaff, dgvPatients, btnAddHospital, btnAddPolyclinic, btnAddDoctor, btnAddPatient });
         }
-
         private void AddHospital()
         {
             using (var form = new Form { Text = "Регистрация больницы", Width = 300, Height = 200 })
@@ -152,9 +161,9 @@ namespace WPF_Kursach.AnotherDirectory.MainForms
 
         private void DgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Проверяем, что кликнули по строке, а не по заголовку
+            if (e.RowIndex >= 0)
             {
-                Employee employee = dgvStaff.Rows[e.RowIndex].DataBoundItem as Employee;
+                var employee = dgvStaff.Rows[e.RowIndex].DataBoundItem as Doctor; // Используем Doctor вместо Employee
                 if (employee != null)
                 {
                     MessageBox.Show($"Выбран сотрудник: {employee.FullName} {employee.Surname}, Специализация: {employee.Specialization}");
@@ -166,16 +175,16 @@ namespace WPF_Kursach.AnotherDirectory.MainForms
         {
             if (e.RowIndex >= 0)
             {
-                Patient patient = dgvPatients.Rows[e.RowIndex].DataBoundItem as Patient;
+                var patient = dgvPatients.Rows[e.RowIndex].DataBoundItem as Patient;
                 if (patient != null)
                 {
                     string doctorInfo = patient.CurrentDoctor != null
                         ? $"Лечащий врач: {patient.CurrentDoctor.FullName} {patient.CurrentDoctor.Surname}"
-                        : $"Лечащие врачи: {string.Join(", ", patient.CurrentDoctors.Select(d => $"{d.FullName} {d.Surname}"))}";
+                        : $"Лечащие врачи: {string.Join(", ", patient.CurrentDoctors?.Select(d => $"{d.FullName} {d.Surname}") ?? new string[0])}";
                     MessageBox.Show($"Выбран пациент: {patient.FullName} {patient.Surname}\n{doctorInfo}");
                 }
             }
-        }
+        }           
 
         private Organization GetSelectedOrganization()
         {
@@ -196,23 +205,23 @@ namespace WPF_Kursach.AnotherDirectory.MainForms
 
         private void UpdateGrids()
         {
-            Organization org = GetSelectedOrganization();
-            if (org == null) return;
+            var org = GetSelectedOrganization();
+            if (org == null)
+            {
+                dgvStaff.DataSource = null;
+                dgvPatients.DataSource = null;
+                return;
+            }
 
-            // Очищаем и задаем источник данных для сотрудников
             dgvStaff.DataSource = null;
-            dgvStaff.DataSource = org.StaffList;
-            ConfigureStaffGrid();
+            dgvStaff.DataSource = org.StaffList; // Предполагается, что StaffList — это List<Doctor>
 
-            // Очищаем и задаем источник данных для пациентов
             dgvPatients.DataSource = null;
-            dgvPatients.DataSource = org is Hospital h ? h.Patients : (org as Polyclinic).Patients;
-            ConfigurePatientsGrid();
+            dgvPatients.DataSource = org is Hospital h ? h.Patients : (org as Polyclinic)?.Patients;
         }
 
         private void ConfigureStaffGrid()
         {
-            dgvStaff.Columns.Clear();
             dgvStaff.AutoGenerateColumns = false;
             dgvStaff.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Имя", DataPropertyName = "FullName" });
             dgvStaff.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Фамилия", DataPropertyName = "Surname" });
@@ -221,7 +230,6 @@ namespace WPF_Kursach.AnotherDirectory.MainForms
 
         private void ConfigurePatientsGrid()
         {
-            dgvPatients.Columns.Clear();
             dgvPatients.AutoGenerateColumns = false;
             dgvPatients.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Имя", DataPropertyName = "FullName" });
             dgvPatients.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Фамилия", DataPropertyName = "Surname" });

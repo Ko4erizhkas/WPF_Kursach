@@ -7,7 +7,7 @@ namespace WPF_Kursach.AnotherDirectory.ControlClasses
         private Doctor _CurrentDoctor;
 
         [JsonPropertyName("Id")]
-        public string Id { get; set; } // Work in progress
+        public string Id { get; set; }
         [JsonPropertyName("DataBirth")]
         public DateOnly? DateBirth { get; set; }
         [JsonPropertyName("Gender")]
@@ -20,14 +20,13 @@ namespace WPF_Kursach.AnotherDirectory.ControlClasses
         public string MedHistory { get; set; }
         [JsonPropertyName("CurrentDoctor")]
         public Doctor? CurrentDoctor { get; set; }
-        public List<Doctor> CurrentDoctors { get; set; }
+        public List<Doctor> CurrentDoctors { get; set; } = new List<Doctor>();
 
         public Patient(string _FullName, string _Surname, string _MiddleName,
                        DateOnly _DateBirth, string _Gender,
                        string _PhoneNumber, string _Email, int _Age) :
                        base(_FullName, _Surname, _MiddleName, _Age)
         {
-            this.Id = GenerateUniqueId();
             this.DateBirth = _DateBirth;
             this.Gender = _Gender;
             this.PhoneNumber = _PhoneNumber;
@@ -39,7 +38,6 @@ namespace WPF_Kursach.AnotherDirectory.ControlClasses
                        Doctor _CurrentDoctor) :
                        base(_FullName, _Surname, _MiddleName, _Age)
         {
-            this.Id = GenerateUniqueId();
             this.DateBirth = _DateBirth;
             this.Gender = _Gender;
             this.PhoneNumber = _PhoneNumber;
@@ -54,7 +52,6 @@ namespace WPF_Kursach.AnotherDirectory.ControlClasses
                        Doctor _CurrentDoctor, string _MedHistory) :
                        base(_FullName, _Surname, _MiddleName, _Age)
         {
-            this.Id = GenerateUniqueId();
             this.DateBirth = _DateBirth;
             this.Gender = _Gender;
             this.PhoneNumber = _PhoneNumber;
@@ -69,9 +66,6 @@ namespace WPF_Kursach.AnotherDirectory.ControlClasses
         }
         public Patient(string _FullName, string _Surname) : base(_FullName, _Surname) { }
         public Patient(string _FullName, string _Surname, string _MiddleName) : base(_FullName, _Surname, _MiddleName) { }
-        private string GenerateUniqueId()
-        {
-            return "";
-        }
+        
     }
 }

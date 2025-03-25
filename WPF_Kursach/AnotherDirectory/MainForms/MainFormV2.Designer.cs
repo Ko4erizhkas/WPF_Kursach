@@ -1,6 +1,6 @@
 ﻿namespace WPF_Kursach.AnotherDirectory.MainForms
 {
-    partial class MainForm
+    partial class MainFormV2
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,13 @@
         {
             SuspendLayout();
             // 
-            // MainForm
+            // MainFormV2
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
-            AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(2564, 1421);
-            Margin = new Padding(41, 19, 41, 19);
-            Name = "MainForm";
-            Text = "MainForm";
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Name = "MainFormV2";
+            Text = "MainFormV2";
             ResumeLayout(false);
         }
 

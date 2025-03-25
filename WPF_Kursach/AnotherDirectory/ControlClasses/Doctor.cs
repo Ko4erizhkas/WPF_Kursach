@@ -63,7 +63,5 @@ public class Doctor : Employee
                 base (_FullName, _Surname, _MiddleName,
                 _Spec, _Id, _PhoneNumber,
                 _Degree, _Snils)
-    {
-
-    }
+    { }
 }
