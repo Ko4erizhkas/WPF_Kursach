@@ -38,9 +38,9 @@ namespace WPF_Kursach.AnotherDirectory.ActionForms.RegForms
             {
                 MessageBox.Show("Введено некоректное значение! Установлено значение по умолчанию.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            Polyclinic hospital = new Polyclinic(RP_NameOrg, RP_AddressOrg, RP_StaffCapacity, RP_DescOrg, null);
+            Polyclinic polyclinic = new Polyclinic(RP_NameOrg, RP_AddressOrg, RP_StaffCapacity, RP_DescOrg, null);
 
-            gf.LoadDataJson(absolutePath, "Polyclinic", "*.json");
+            gf.LoadDataJson(absolutePath, "Polyclinic", polyclinic);
 
             this.Close();
             MessageBox.Show(

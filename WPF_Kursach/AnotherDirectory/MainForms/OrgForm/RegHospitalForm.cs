@@ -38,7 +38,7 @@ namespace WPF_Kursach.AnotherDirectory.ActionForms.RegForms
             }
             Hospital hospital = new Hospital(RH_NameOrg, RH_AddressOrg, RH_StaffCapacity, RH_DescOrg);
 
-            gf.LoadDataJson(absolutePath,"Hospital","*.json");
+            gf.LoadDataJson(absolutePath,"Hospital",hospital);
 
             this.Close();
             MessageBox.Show(
