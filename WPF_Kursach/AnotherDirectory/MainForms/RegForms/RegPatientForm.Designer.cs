@@ -34,25 +34,18 @@
             Label RegPatientLabel_1;
             Label P_FullNameLabel;
             Label P_EmailLabel_1;
-            Label P_CurrentDoctorLabel_1;
-            Label P_DoctorFullNameLabel_1;
-            Label P_DoctorSurnameLabel_1;
             Label P_AgeLabel_1;
             Label P_MiddleNameLabel_1;
             Label label1;
-            Label P_DoctorMiddleNameLabel_1;
             RegPatientButtom_1 = new Button();
             P_PhoneNumberTextBox_1 = new TextBox();
             P_SurnameTextBox_1 = new TextBox();
             P_FullNameTextBox_1 = new TextBox();
             P_EmailTextBox1 = new TextBox();
-            P_DoctorFullNameTextBox_1 = new TextBox();
-            P_DoctorSurnameTextBox_1 = new TextBox();
             P_AgeTextBox_1 = new TextBox();
             P_MiddleNameTextBox_1 = new TextBox();
             P_DateTimePicker_1 = new DateTimePicker();
             P_GenderComboBox_1 = new ComboBox();
-            P_DoctorMiddleNameTextBox_1 = new TextBox();
             P_DescriptionLabel_1 = new Label();
             D_DescriptionTextBox_1 = new TextBox();
             P_PhoneNumber_1 = new Label();
@@ -61,13 +54,9 @@
             RegPatientLabel_1 = new Label();
             P_FullNameLabel = new Label();
             P_EmailLabel_1 = new Label();
-            P_CurrentDoctorLabel_1 = new Label();
-            P_DoctorFullNameLabel_1 = new Label();
-            P_DoctorSurnameLabel_1 = new Label();
             P_AgeLabel_1 = new Label();
             P_MiddleNameLabel_1 = new Label();
             label1 = new Label();
-            P_DoctorMiddleNameLabel_1 = new Label();
             SuspendLayout();
             // 
             // P_PhoneNumber_1
@@ -130,36 +119,6 @@
             P_EmailLabel_1.TabIndex = 25;
             P_EmailLabel_1.Text = "E-mail";
             // 
-            // P_CurrentDoctorLabel_1
-            // 
-            P_CurrentDoctorLabel_1.AutoSize = true;
-            P_CurrentDoctorLabel_1.Font = new Font("Segoe UI", 9F);
-            P_CurrentDoctorLabel_1.Location = new Point(477, 9);
-            P_CurrentDoctorLabel_1.Name = "P_CurrentDoctorLabel_1";
-            P_CurrentDoctorLabel_1.Size = new Size(88, 15);
-            P_CurrentDoctorLabel_1.TabIndex = 26;
-            P_CurrentDoctorLabel_1.Text = "Лечащий врач";
-            // 
-            // P_DoctorFullNameLabel_1
-            // 
-            P_DoctorFullNameLabel_1.AutoSize = true;
-            P_DoctorFullNameLabel_1.Font = new Font("Segoe UI", 9F);
-            P_DoctorFullNameLabel_1.Location = new Point(477, 53);
-            P_DoctorFullNameLabel_1.Name = "P_DoctorFullNameLabel_1";
-            P_DoctorFullNameLabel_1.Size = new Size(66, 15);
-            P_DoctorFullNameLabel_1.TabIndex = 28;
-            P_DoctorFullNameLabel_1.Text = "Имя врача";
-            // 
-            // P_DoctorSurnameLabel_1
-            // 
-            P_DoctorSurnameLabel_1.AutoSize = true;
-            P_DoctorSurnameLabel_1.Font = new Font("Segoe UI", 9F);
-            P_DoctorSurnameLabel_1.Location = new Point(477, 118);
-            P_DoctorSurnameLabel_1.Name = "P_DoctorSurnameLabel_1";
-            P_DoctorSurnameLabel_1.Size = new Size(93, 15);
-            P_DoctorSurnameLabel_1.TabIndex = 30;
-            P_DoctorSurnameLabel_1.Text = "Фамилия врача";
-            // 
             // P_AgeLabel_1
             // 
             P_AgeLabel_1.AutoSize = true;
@@ -190,19 +149,9 @@
             label1.TabIndex = 40;
             label1.Text = "Дата рождения";
             // 
-            // P_DoctorMiddleNameLabel_1
-            // 
-            P_DoctorMiddleNameLabel_1.AutoSize = true;
-            P_DoctorMiddleNameLabel_1.Font = new Font("Segoe UI", 9F);
-            P_DoctorMiddleNameLabel_1.Location = new Point(477, 182);
-            P_DoctorMiddleNameLabel_1.Name = "P_DoctorMiddleNameLabel_1";
-            P_DoctorMiddleNameLabel_1.Size = new Size(58, 15);
-            P_DoctorMiddleNameLabel_1.TabIndex = 43;
-            P_DoctorMiddleNameLabel_1.Text = "Отчество";
-            // 
             // RegPatientButtom_1
             // 
-            RegPatientButtom_1.Location = new Point(350, 466);
+            RegPatientButtom_1.Location = new Point(304, 466);
             RegPatientButtom_1.Name = "RegPatientButtom_1";
             RegPatientButtom_1.Size = new Size(140, 50);
             RegPatientButtom_1.TabIndex = 23;
@@ -238,20 +187,6 @@
             P_EmailTextBox1.Size = new Size(142, 23);
             P_EmailTextBox1.TabIndex = 24;
             // 
-            // P_DoctorFullNameTextBox_1
-            // 
-            P_DoctorFullNameTextBox_1.Location = new Point(477, 81);
-            P_DoctorFullNameTextBox_1.Name = "P_DoctorFullNameTextBox_1";
-            P_DoctorFullNameTextBox_1.Size = new Size(140, 23);
-            P_DoctorFullNameTextBox_1.TabIndex = 27;
-            // 
-            // P_DoctorSurnameTextBox_1
-            // 
-            P_DoctorSurnameTextBox_1.Location = new Point(477, 143);
-            P_DoctorSurnameTextBox_1.Name = "P_DoctorSurnameTextBox_1";
-            P_DoctorSurnameTextBox_1.Size = new Size(140, 23);
-            P_DoctorSurnameTextBox_1.TabIndex = 29;
-            // 
             // P_AgeTextBox_1
             // 
             P_AgeTextBox_1.Location = new Point(14, 246);
@@ -283,13 +218,6 @@
             P_GenderComboBox_1.Size = new Size(140, 23);
             P_GenderComboBox_1.TabIndex = 41;
             // 
-            // P_DoctorMiddleNameTextBox_1
-            // 
-            P_DoctorMiddleNameTextBox_1.Location = new Point(477, 200);
-            P_DoctorMiddleNameTextBox_1.Name = "P_DoctorMiddleNameTextBox_1";
-            P_DoctorMiddleNameTextBox_1.Size = new Size(140, 23);
-            P_DoctorMiddleNameTextBox_1.TabIndex = 42;
-            // 
             // P_DescriptionLabel_1
             // 
             P_DescriptionLabel_1.AutoSize = true;
@@ -304,18 +232,16 @@
             D_DescriptionTextBox_1.Location = new Point(14, 293);
             D_DescriptionTextBox_1.Multiline = true;
             D_DescriptionTextBox_1.Name = "D_DescriptionTextBox_1";
-            D_DescriptionTextBox_1.Size = new Size(478, 167);
+            D_DescriptionTextBox_1.Size = new Size(430, 167);
             D_DescriptionTextBox_1.TabIndex = 53;
             // 
             // RegPatientForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(632, 528);
+            ClientSize = new Size(456, 528);
             Controls.Add(P_DescriptionLabel_1);
             Controls.Add(D_DescriptionTextBox_1);
-            Controls.Add(P_DoctorMiddleNameLabel_1);
-            Controls.Add(P_DoctorMiddleNameTextBox_1);
             Controls.Add(P_GenderComboBox_1);
             Controls.Add(label1);
             Controls.Add(P_DateTimePicker_1);
@@ -323,11 +249,6 @@
             Controls.Add(P_MiddleNameTextBox_1);
             Controls.Add(P_AgeLabel_1);
             Controls.Add(P_AgeTextBox_1);
-            Controls.Add(P_DoctorSurnameLabel_1);
-            Controls.Add(P_DoctorSurnameTextBox_1);
-            Controls.Add(P_DoctorFullNameLabel_1);
-            Controls.Add(P_DoctorFullNameTextBox_1);
-            Controls.Add(P_CurrentDoctorLabel_1);
             Controls.Add(P_EmailLabel_1);
             Controls.Add(P_EmailTextBox1);
             Controls.Add(RegPatientButtom_1);
@@ -353,13 +274,10 @@
         private TextBox P_SurnameTextBox_1;
         private TextBox P_FullNameTextBox_1;
         private TextBox P_EmailTextBox1;
-        private TextBox P_DoctorFullNameTextBox_1;
-        private TextBox P_DoctorSurnameTextBox_1;
         private TextBox P_AgeTextBox_1;
         private TextBox P_MiddleNameTextBox_1;
         private DateTimePicker P_DateTimePicker_1;
         private ComboBox P_GenderComboBox_1;
-        private TextBox P_DoctorMiddleNameTextBox_1;
         private Label P_DescriptionLabel_1;
         private TextBox D_DescriptionTextBox_1;
     }

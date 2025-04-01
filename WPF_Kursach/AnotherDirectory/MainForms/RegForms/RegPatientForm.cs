@@ -4,6 +4,10 @@ namespace WPF_Kursach
 {
     public partial class RegPatientForm : Form
     {
+        private GeneratorFiles gf = new GeneratorFiles();
+        static private readonly string path = AppDomain.CurrentDomain.BaseDirectory;
+        static private readonly string relativePath = @"AnotherDirectory\DataBase\PatientData";
+        static private readonly string absolutePath = Path.Combine(path, relativePath);
         public RegPatientForm()
         {
             InitializeComponent();
@@ -22,15 +26,11 @@ namespace WPF_Kursach
             string P_MiddleName = P_MiddleNameTextBox_1.Text;
             string P_PhoneNumber = P_PhoneNumberTextBox_1.Text;
             string P_EmailAddress = P_EmailTextBox1.Text;
-            string P_DoctorFullName = P_DoctorFullNameTextBox_1.Text;
-            string P_DoctorSurname = P_DoctorSurnameTextBox_1.Text;
-            string P_DoctorMiddleName = P_DoctorMiddleNameTextBox_1.Text;
 
 
             int P_Age = Convert.ToInt32(P_AgeTextBox_1.Text);
 
             DateOnly P_DateBirth = DateOnly.FromDateTime(P_DateTimePicker_1.Value);
-            Doctor P_CurrentDoctor = new Doctor(P_DoctorFullName,P_DoctorSurname, P_DoctorMiddleName, null, null,null,null,null);
 
             string? P_Gender;
             if (P_GenderComboBox_1.SelectedItem != null)
@@ -54,9 +54,9 @@ namespace WPF_Kursach
             }
             var NewPatient = new Patient(P_FullName, P_Surname, P_MiddleName, P_DateBirth,
                                          P_Gender, P_PhoneNumber,
-                                         P_EmailAddress, P_Age, P_CurrentDoctor);
+                                         P_EmailAddress, P_Age);
 
-            generatorFiles.GenerateFile(@"E:\Курсач\Patient", "Patient", NewPatient);
+            gf.LoadDataJson(absolutePath,"Patient",NewPatient);
 
             this.Close();
             MessageBox.Show(

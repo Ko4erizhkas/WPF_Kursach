@@ -18,15 +18,9 @@ public class Hospital : Organization
         Console.WriteLine($"Корпус {building.Number} добавлен в {NameOrg}");
 #endif
     }
-    public void AddPatient(Patient patient, Doctor doctor)
+    public void AddPatient(Patient patient)
     {
         if (patient == null) throw new ArgumentNullException(nameof(patient));
-        if (doctor == null) throw new ArgumentNullException(nameof(doctor));
-        if (!StaffList.Contains(doctor))
-        {
-            throw new InvalidOperationException($"Врач {doctor.FullName} {doctor.Surname} не работает в {NameOrg}");
-        }
-        patient.CurrentDoctor = doctor;
         Patients.Add(patient);
 #if DEBUG
         Console.WriteLine($"Пациент {patient.FullName} {patient.Surname} добавлен в {NameOrg}");

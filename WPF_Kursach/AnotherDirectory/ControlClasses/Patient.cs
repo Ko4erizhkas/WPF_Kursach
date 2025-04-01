@@ -4,10 +4,6 @@ namespace WPF_Kursach.AnotherDirectory.ControlClasses
 {
     public class Patient : Person
     {
-        private Doctor _CurrentDoctor;
-
-        [JsonPropertyName("Id")]
-        public string Id { get; set; }
         [JsonPropertyName("DataBirth")]
         public DateOnly? DateBirth { get; set; }
         [JsonPropertyName("Gender")]
@@ -20,8 +16,6 @@ namespace WPF_Kursach.AnotherDirectory.ControlClasses
         public string MedHistory { get; set; }
         [JsonPropertyName("CurrentDoctor")]
         public Doctor? CurrentDoctor { get; set; }
-        public List<Doctor> CurrentDoctors { get; set; } = new List<Doctor>();
-
         public Patient(string _FullName, string _Surname, string _MiddleName,
                        DateOnly _DateBirth, string _Gender,
                        string _PhoneNumber, string _Email, int _Age) :
@@ -32,6 +26,8 @@ namespace WPF_Kursach.AnotherDirectory.ControlClasses
             this.PhoneNumber = _PhoneNumber;
             this.Email = _Email;
         }
+
+        //Нужно сделать десериализацию данных о CurrentDoctor в таблицу с Doctor или отдельно
         public Patient(string _FullName, string _Surname, string _MiddleName,
                        DateOnly _DateBirth, string _Gender,
                        string _PhoneNumber, string _Email, int _Age,
@@ -43,20 +39,17 @@ namespace WPF_Kursach.AnotherDirectory.ControlClasses
             this.PhoneNumber = _PhoneNumber;
             this.Email = _Email;
             this.CurrentDoctor = _CurrentDoctor;
-
         }
 
         public Patient(string _FullName, string _Surname, string _MiddleName,
                        DateOnly _DateBirth, string _Gender,
-                       string _PhoneNumber, string _Email, int _Age,
-                       Doctor _CurrentDoctor, string _MedHistory) :
+                       string _PhoneNumber, string _Email, int _Age, string _MedHistory) :
                        base(_FullName, _Surname, _MiddleName, _Age)
         {
             this.DateBirth = _DateBirth;
             this.Gender = _Gender;
             this.PhoneNumber = _PhoneNumber;
             this.Email = _Email;
-            this.CurrentDoctor = _CurrentDoctor;
             this.MedHistory = _MedHistory;
         }
         public Patient(string _FullName, string _Surname, string _MiddleName, Doctor _CurrentDoctor) :

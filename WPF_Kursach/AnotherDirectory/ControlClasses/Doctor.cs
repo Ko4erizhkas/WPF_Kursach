@@ -31,11 +31,11 @@ public class Doctor : Employee
     public string? Description { get; private set; }
     public Doctor(string _FullName, string _Surname, string _MiddleName,
                   string _Spec, string _Id, string _PhoneNumber,
-                  string _Degree, string _Snils, string _MegArea,
+                  string _Degree, string _MegArea,
                   string _MedBranch, string _Description, decimal _Salary) :
            base(_FullName, _Surname, _MiddleName,
                 _Spec, _Id, _PhoneNumber,
-                _Degree, _Snils)
+                _Degree)
     {
         this.MedArea = _MegArea;
         this.MedBranch = _MedBranch;
@@ -44,12 +44,12 @@ public class Doctor : Employee
     }
     public Doctor(string _FullName, string _Surname, string _MiddleName,
                    string _Spec, string _Id, string _PhoneNumber,
-                   string _Degree, string _Snils, string _MedArea,
+                   string _Degree, string _MedArea,
                    string _MedBranch, string _MedRank, string _Description,
                    decimal _Salary) :
            base(_FullName, _Surname, _MiddleName,
                 _Spec, _Id, _PhoneNumber,
-                _Degree, _Snils)
+                _Degree)
     {
         this.MedArea = _MedArea;
         this.MedBranch = _MedBranch;
@@ -59,9 +59,10 @@ public class Doctor : Employee
     }
     public Doctor(string _FullName, string _Surname, string _MiddleName,
                    string _Spec, string _Id, string _PhoneNumber,
-                   string _Degree, string _Snils) : 
+                   string _Degree) : 
                 base (_FullName, _Surname, _MiddleName,
                 _Spec, _Id, _PhoneNumber,
-                _Degree, _Snils)
+                _Degree)
     { }
+
 }

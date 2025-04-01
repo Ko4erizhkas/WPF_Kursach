@@ -44,6 +44,7 @@
             RH_Button_1.TabIndex = 0;
             RH_Button_1.Text = "ОК";
             RH_Button_1.UseVisualStyleBackColor = true;
+            RH_Button_1.Click += RH_Button_1_Click;
             // 
             // RH_TextBox_1
             // 
@@ -100,6 +101,7 @@
             Controls.Add(RH_Button_1);
             Name = "RegHospitalForm";
             Text = "Регистрация госпиталя";
+            Load += RegHospitalForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

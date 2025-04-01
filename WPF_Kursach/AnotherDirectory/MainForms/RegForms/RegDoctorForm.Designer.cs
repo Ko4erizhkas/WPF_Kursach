@@ -49,8 +49,6 @@
             D_MiddleNameTextBox_1 = new TextBox();
             D_DegreeComboBox_1 = new ComboBox();
             D_DegreeLabel_1 = new Label();
-            D_SnilsTextBox_1 = new TextBox();
-            D_SnilsLabel_1 = new Label();
             D_SpecComboBox_1 = new ComboBox();
             D_MedAreaComboBox_1 = new ComboBox();
             D_MedBranchComboBox_1 = new ComboBox();
@@ -178,7 +176,7 @@
             // 
             D_MedBranchLabel_1.AutoSize = true;
             D_MedBranchLabel_1.Font = new Font("Segoe UI", 9F);
-            D_MedBranchLabel_1.Location = new Point(178, 275);
+            D_MedBranchLabel_1.Location = new Point(178, 230);
             D_MedBranchLabel_1.Name = "D_MedBranchLabel_1";
             D_MedBranchLabel_1.Size = new Size(66, 15);
             D_MedBranchLabel_1.TabIndex = 49;
@@ -261,22 +259,6 @@
             D_DegreeLabel_1.TabIndex = 44;
             D_DegreeLabel_1.Text = "Учёная степень";
             // 
-            // D_SnilsTextBox_1
-            // 
-            D_SnilsTextBox_1.Location = new Point(178, 248);
-            D_SnilsTextBox_1.Name = "D_SnilsTextBox_1";
-            D_SnilsTextBox_1.Size = new Size(141, 23);
-            D_SnilsTextBox_1.TabIndex = 45;
-            // 
-            // D_SnilsLabel_1
-            // 
-            D_SnilsLabel_1.AutoSize = true;
-            D_SnilsLabel_1.Location = new Point(178, 230);
-            D_SnilsLabel_1.Name = "D_SnilsLabel_1";
-            D_SnilsLabel_1.Size = new Size(49, 15);
-            D_SnilsLabel_1.TabIndex = 46;
-            D_SnilsLabel_1.Text = "СНИЛС";
-            // 
             // D_SpecComboBox_1
             // 
             D_SpecComboBox_1.FormattingEnabled = true;
@@ -299,7 +281,7 @@
             // 
             D_MedBranchComboBox_1.FormattingEnabled = true;
             D_MedBranchComboBox_1.Items.AddRange(new object[] { "Неврология", "Хирургия", "Гинекология", "Урология", "Стомотология" });
-            D_MedBranchComboBox_1.Location = new Point(178, 293);
+            D_MedBranchComboBox_1.Location = new Point(178, 248);
             D_MedBranchComboBox_1.Name = "D_MedBranchComboBox_1";
             D_MedBranchComboBox_1.Size = new Size(140, 23);
             D_MedBranchComboBox_1.TabIndex = 50;
@@ -381,8 +363,6 @@
             Controls.Add(D_MedBranchLabel_1);
             Controls.Add(D_MedAreaComboBox_1);
             Controls.Add(D_SpecComboBox_1);
-            Controls.Add(D_SnilsLabel_1);
-            Controls.Add(D_SnilsTextBox_1);
             Controls.Add(D_DegreeLabel_1);
             Controls.Add(D_DegreeComboBox_1);
             Controls.Add(D_MiddleNameLabel_1);
@@ -427,8 +407,6 @@
         private TextBox D_MiddleNameTextBox_1;
         private ComboBox D_DegreeComboBox_1;
         private Label D_DegreeLabel_1;
-        private TextBox D_SnilsTextBox_1;
-        private Label D_SnilsLabel_1;
         private ComboBox D_SpecComboBox_1;
         private ComboBox D_MedAreaComboBox_1;
         private ComboBox D_MedBranchComboBox_1;

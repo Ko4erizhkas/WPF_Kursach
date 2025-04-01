@@ -4,6 +4,10 @@ namespace WPF_Kursach
 {
     public partial class RegDoctorForm : Form
     {
+        private GeneratorFiles gf = new GeneratorFiles();
+        static private readonly string path = AppDomain.CurrentDomain.BaseDirectory;
+        static private readonly string relativePath = @"AnotherDirectory\DataBase\DoctorData";
+        static private readonly string absolutePath = Path.Combine(path, relativePath);
         public RegDoctorForm()
         {
             InitializeComponent();
@@ -22,7 +26,6 @@ namespace WPF_Kursach
             string D_Gender = D_GenderTextBox_1.Text;
             string D_Address = D_AddressTextBox_1.Text;
             string D_Description = D_DescriptionTextBox_1.Text;
-            string D_Snils = D_SnilsTextBox_1.Text;
             string D_Id = D_IdTextBox_1.Text;
 
             string D_SpecName;
@@ -80,10 +83,10 @@ namespace WPF_Kursach
             decimal D_Salary = Convert.ToDecimal(D_SalaryTextBox_1.Text);
             var NewDoctor = new Doctor(D_FullName, D_Surname, D_MiddleName,
                                        D_SpecName, D_Id, D_PhoneNumber,
-                                       D_Degree, D_Snils, D_MedArea,
+                                       D_Degree, D_MedArea,
                                        D_MedBranch, D_MedRank ,D_Description, D_Salary);
 
-            generatorFiles.GenerateFile(@"E:\Курсач\Doctor", "Doctor", NewDoctor);
+            gf.LoadDataJson(absolutePath, "Doctor", NewDoctor);
 
             this.Close();
             MessageBox.Show("Данные успешно сохранены!", "Готово!", MessageBoxButtons.OK, MessageBoxIcon.Information);

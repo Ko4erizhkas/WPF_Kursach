@@ -15,15 +15,15 @@ namespace WPF_Kursach.AnotherDirectory.ControlClasses
         public void AddPatient(Patient patient, List<Doctor> doctors)
         {
             if (patient == null) throw new ArgumentNullException(nameof(patient));
-            if (doctors == null || doctors.Count == 0) throw new ArgumentException("Список врачей не может быть пустым!", nameof(doctors));
-            foreach (var doc in doctors)
-            {
-                if (!StaffList.Contains(doc))
-                {
-                    throw new InvalidOperationException($"Врач {doc.FullName} {doc.Surname} не работает в {NameOrg}");
-                }
-            }
-            patient.CurrentDoctors = new List<Doctor>(doctors);
+            //if (doctors == null || doctors.Count == 0) throw new ArgumentException("Список врачей не может быть пустым!", nameof(doctors));
+            //foreach (var doc in doctors)
+            //{
+            //    if (!StaffList.Contains(doc))
+            //    {
+            //        throw new InvalidOperationException($"Врач {doc.FullName} {doc.Surname} не работает в {NameOrg}");
+            //    }
+            //}
+            //patient.CurrentDoctors = new List<Doctor>(doctors);
             Patients.Add(patient);
 #if DEBUG
             Console.WriteLine($"Пациент {patient.FullName} {patient.Surname} добавлен в {NameOrg}");

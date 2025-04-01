@@ -52,9 +52,9 @@ namespace WPF_Kursach.AnotherDirectory.ActionForms.RegForms
 
             var NewEmployee = new Employee(Emp_FullName, Emp_Surname, Emp_MiddleName,
                                            Emp_Spec, Emp_ID, Emp_PhoneNumber,
-                                           Emp_Degree, Emp_Snils);
+                                           Emp_Degree);
 
-            generatorFiles.GenerateFile(@"E:\Курсач\Employee", "Employee", NewEmployee);
+            generatorFiles.LoadDataJson(@"E:\Курсач\Employee", "Employee", NewEmployee);
             this.Close();
             MessageBox.Show("Данные успешно сохранены", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

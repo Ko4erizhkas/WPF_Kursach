@@ -16,5 +16,10 @@ namespace WPF_Kursach.AnotherDirectory.ActionForms.UploadForms
         {
             InitializeComponent();
         }
+
+        private void UploadPatient_Load(object sender, EventArgs e)
+        {
+                                                        
+        }
     }
 }

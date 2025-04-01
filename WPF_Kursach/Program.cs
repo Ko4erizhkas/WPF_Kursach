@@ -1,3 +1,4 @@
+using WPF_Kursach.ActionForms;
 using WPF_Kursach.AnotherDirectory.MainForms;
 
 namespace WPF_Kursach
@@ -13,7 +14,7 @@ namespace WPF_Kursach
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+            Application.Run(new MainFormV2());
             //Application.Run(new UploadInfoFromJsonForm());
         }
     }
